@@ -16,6 +16,24 @@ let front = {
             this.body.removeClass('overflow');
         }
     },
+  openTab: function (element, tabName, parent) {
+      let i, tab_content, tab_links;
+
+      tab_content = $(element).closest(parent).find('.tab-content');
+
+      for (i = 0; i < tab_content.length; i++) {
+          tab_content[i].style.display = "none";
+      }
+
+      tab_links = $(element).closest('.tabs-ul').find('.tab-links');
+
+      for (i = 0; i < tab_links.length; i++) {
+          tab_links[i].className = tab_links[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      $(element).addClass('active');
+  },
   events: function () {
       let self = this;
       $(document).on('click', '.hamburger', function () {

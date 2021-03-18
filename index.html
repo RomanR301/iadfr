@@ -36,7 +36,6 @@
     </div>
   </header>
 
-
   <main>
     <section class="main-screen">
       <div class="container">
@@ -44,7 +43,7 @@
           <img src="./img/main-screen-bg.jpg" alt="">
         </div>
         <div class="main-screen__content">
-          <h1 class="heading-1">Prix de l’immobilier au m2 <span>à Grenoble 38000</span></h1>
+          <h1>Prix de l’immobilier au m2 <span>à Grenoble 38000</span></h1>
           <div class="main-screen__search">
             <form action="">
               <div class="form-group">
@@ -55,6 +54,271 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="prices">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tabs">
+              <ul class="tabs-list tabs-ul">
+                <li class="tabs-list__item">
+                  <a onclick="front.openTab(this, 'tab-0','.tabs')" class="tabs-list__item_link tab-links active">Prix
+                    de vente à Grenoble</a>
+                </li>
+                <li class="tabs-list__item">
+                  <a onclick="front.openTab(this, 'tab-1','.tabs')" class="tabs-list__item_link tab-links">Prix du loyer
+                    à Grenoble</a>
+                </li>
+              </ul>
+
+              <div class="tabs-wrap">
+                <div class="tab-content active" id="tab-0">
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">
+                      Prix de vente moyen par type de bien à Grenoblev
+                    </h2>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-apartment"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-house"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-office"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">Prix de vente moyen par type de bien à Grenoblev</h2>
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-apartment"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-house"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-office"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-studio"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">1000€/m²</div>
+                          <div class="prices-item__type">Studio</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-2-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">2000€/m²</div>
+                          <div class="prices-item__type">2 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-3-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">3000€/m²</div>
+                          <div class="prices-item__type">3 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-4-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">4000€/m²</div>
+                          <div class="prices-item__type">4 pièces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-5-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">5000€/m²</div>
+                          <div class="prices-item__type">5 pieces et +</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-content" id="tab-1">
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">
+                      Prix de vente moyen par type de bien à Grenoblev
+                    </h2>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-apartment"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-house"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-office"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">Prix de vente moyen par type de bien à Grenoblev</h2>
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-apartment"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-house"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-office"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-studio"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">1000€/m²</div>
+                          <div class="prices-item__type">Studio</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-2-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">2000€/m²</div>
+                          <div class="prices-item__type">2 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-3-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">3000€/m²</div>
+                          <div class="prices-item__type">3 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-4-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">4000€/m²</div>
+                          <div class="prices-item__type">4 pièces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <i class="icon-icon-5-pieces"></i>
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">5000€/m²</div>
+                          <div class="prices-item__type">5 pieces et +</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="prices-image">
+              <img src="./img/map-placeholder.jpg">
+            </div>
+          </div>
+        </div>
     </section>
   </main>
 
