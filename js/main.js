@@ -21,13 +21,13 @@ let front = {
       $(document).on('click', '.hamburger', function () {
           self.toggleNav();
       });
-      // $(window).scroll(function () {
-      //   if ($(this).scrollTop() > 200) {
-      //     $('header').addClass("scroll-header");
-      //   } else {
-      //     $('header').removeClass("scroll-header");
-      //   }
-      // });
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+          $('header').addClass("scroll-header");
+        } else {
+          $('header').removeClass("scroll-header");
+        }
+      });
   }
 };
 

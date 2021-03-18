@@ -21,6 +21,98 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icon-arrow:before {
+  content: "\e900";
+}
+
+.icon-icon-square-meters:before {
+  content: "\e901";
+}
+
+.icon-icon-rooms:before {
+  content: "\e902";
+}
+
+.icon-arrow-green:before {
+  content: "\e903";
+  color: #26c579;
+}
+
+.icon-arrow-red:before {
+  content: "\e904";
+  color: #c9222f;
+}
+
+.icon-icon-marker:before {
+  content: "\e905";
+  color: #999;
+}
+
+.icon-icon-studio:before {
+  content: "\e906";
+  color: #0f6e94;
+}
+
+.icon-icon-2-pieces:before {
+  content: "\e907";
+  color: #0f6e94;
+}
+
+.icon-icon-store:before {
+  content: "\e908";
+}
+
+.icon-icon-school:before {
+  content: "\e909";
+}
+
+.icon-icon-bed-rooms:before {
+  content: "\e90a";
+}
+
+.icon-icon-3-pieces:before {
+  content: "\e90b";
+  color: #0f6e94;
+}
+
+.icon-icon-bus-station:before {
+  content: "\e90c";
+}
+
+.icon-icon-station:before {
+  content: "\e90d";
+}
+
+.icon-icon-4-pieces:before {
+  content: "\e90e";
+  color: #0f6e94;
+}
+
+.icon-icon-5-pieces:before {
+  content: "\e90f";
+  color: #0f6e94;
+}
+
+.icon-icon-office:before {
+  content: "\e910";
+  color: #0f6e94;
+}
+
+.icon-icon-house:before {
+  content: "\e911";
+  color: #0f6e94;
+}
+
+.icon-icon-apartment:before {
+  content: "\e912";
+  color: #0f6e94;
+}
+
+.icon-icon-4-pieces1:before {
+  content: "\e913";
+  color: #0f6e94;
+}
+
 .container {
   max-width: 1140px;
   margin: auto;
