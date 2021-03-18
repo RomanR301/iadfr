@@ -1,5 +1,3 @@
-$defaultText: #434d52;
-
 @font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?dk6usu');
@@ -26,30 +24,8 @@ $defaultText: #434d52;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-triangle:before {
-  content: "\e905";
-}
-.icon-filter:before {
-  content: "\e907";
-}
-.icon-sort-arrow:before {
-  content: "\e906";
-}
-.icon-search:before {
-  content: "\e904";
-}
-.icon-arrow:before {
-  content: "\e900";
-}
-.icon-heart:before {
-  content: "\e901";
-}
-.icon-cart:before {
-  content: "\e902";
-}
-.icon-user:before {
-  content: "\e903";
-}
+
+
 @mixin defaultIcon($size) {
   display: block;
   width: 100%;
@@ -57,3 +33,86 @@ $defaultText: #434d52;
   object-fit: $size;
 }
 
+// BOOTSTRAP GRID
+
+$breakpoint-grid-sm: 576px;
+$breakpoint-grid-md: 768px;
+$breakpoint-grid-lg: 992px;
+$breakpoint-grid-xl: 1200px;
+
+$breakpoint-sm: 575px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 991px;
+$breakpoint-xl: 1200px;
+
+@mixin grid-size($size) {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 $size;
+  -ms-flex: 0 0 $size;
+  flex: 0 0 $size;
+  max-width: $size;
+  padding: 0 15px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.m-row {
+  margin: 0;
+  width: unset;
+}
+
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    @include grid-size(8.333333% * $i);
+  }
+}
+
+@media (min-width: ($breakpoint-grid-sm)) {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-md)) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-lg)) {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-xl)) {
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+  }
+}
+// END BOOTSTRAP GRID
