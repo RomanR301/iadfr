@@ -21,6 +21,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-facebook:before {
+  content: "\e901";
+}
+
+.icon-linkedin:before {
+  content: "\e902";
+}
+
+.icon-instagram:before {
+  content: "\e906";
+}
+
 .icon-icon-arrow:before {
   content: "\e900";
 }
