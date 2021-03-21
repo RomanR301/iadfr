@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/precss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
   <link rel="stylesheet" href="css/main.css">
 
   <title>iadfrance</title>
@@ -331,7 +332,57 @@
       </div>
     </section>
     <section class="graph">
+      <div class="container">
+        <div class="graph-main">
+          <h2 class="section-heading">
+            Evolution du marché et des prix de l'immobilier au m2 à Grenoble
+          </h2>
+          <div class="chart-container">
+            <div id="myChartLegend"></div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="graph-additional">
+          <h2 class="section-heading">Evolution des prix immobiliers moyens /m² à Grenoble</h2>
+          <div class="table">
+            <div class="table-row">
+              <div class="table-cell table-heading">Les années</div>
+              <div class="table-cell table-heading">Maison</div>
+              <div class="table-cell table-heading">Appartement</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">6 mois</div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">1 an</div>
+              <div class="table-cell green-cell">-0.5%</div>
+              <div class="table-cell red-cell">+0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">3 ans</div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell red-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">5 ans </div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">10 ans</div>
+              <div class="table-cell green-cell">-0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+          </div>
+        </div>
 
+
+        <div class="graph-description">
+
+        </div>
+      </div>
     </section>
     <section class="products">
       <div class="container">
@@ -1194,7 +1245,7 @@
   <footer class="footer">
     <div class="footer-main">
       <div class="container">
-        <div class="scroll-to-top"> 
+        <div class="scroll-to-top">
           <img src="./img/icons/scroll-to-top.svg" alt="scroll to top">
         </div>
         <div class="row">
@@ -1278,6 +1329,7 @@
 
 
   <script src="./js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
   <script src="./js/swiper.min.js"></script>
   <script src="./js/main.js"></script>
 

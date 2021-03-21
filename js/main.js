@@ -138,6 +138,11 @@ let front = {
           $('header').removeClass("scroll-header");
         }
       });
+      $(document).on('click', '.scroll-to-top', function () {
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 500);
+      });
   }
 };
 
@@ -154,25 +159,124 @@ jQuery(function () {
 });
 
 
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['0','2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
+        datasets: [{
+            label: 'Maisons',
+            boxWidth: 10,
+            data: [1050, 1305, 1560, 1815, 2070, 2325, 2580, 2835, 3090, 3345, 3600],
+            backgroundColor: [
+              'transparent',
+            ],
+            borderColor: [
+                '#0F6E94',
+            ],
+            borderWidth: 2
+        },
+        {
+          label: 'Appartements',
+          data: [1600, 1760, 1920, 2080, 2240, 2400, 2560, 2720, 2880, 3040, 3200 ],
+          backgroundColor: [
+            'transparent',
+          ],
+          borderColor: [
+              '#ff7f31',
+          ],
+          borderWidth: 2
+        }]
+    },
+    options: {
+      legendCallback: function(chart) { 
+        var text = []; 
+        text.push('<ul class="' + chart.id + '-legend">'); 
+        for (var i = 0; i < chart.data.datasets.length; i++) { 
+          text.push('<li><span style="background-color:' + chart.data.datasets[i].backgroundColor + '"></span>'); 
+          if (chart.data.datasets[i].label) { 
+            text.push(chart.data.datasets[i].label); 
+          } 
+          text.push('</li>'); 
+        } 
+        text.push('</ul>'); 
+        return text.join('');
+      },
+      responsive: true,
+      legend: false,
+        elements: {
+            point:{
+                radius: 0
+            }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              color: "#e8e8e8",
+              borderDash: [4, 4],
+            },
+            ticks: {
+              fontSize: 14,
+              fontColor: '#2D3237'
+            }
+          }],
+            yAxes: [{
+              scaleLabel: {
+                fontSize: 16,
+                display: true,
+                labelString: 'Prix/m²',
+                padding: 0,
+                fontColor: '#2D3237'
+              
+              },
+              gridLines: {
+                color: "#e8e8e8",
+                borderDash: [4, 4],
+              },
+              ticks: {
+                  beginAtZero: true,
+                  min: 400,
+                  max: 4000,
+                  stepSize: 400,
+                  fontSize: 14,
+                  fontColor: '#2D3237'
+              }
+            }]
+        }
+    }
+});
 
 
+var myLegendContainer = document.getElementById("myChartLegend");
 
+// generate HTML legend
+myLegendContainer.innerHTML = myChart.generateLegend();
 
-// function showLanguages() {
-//   $(".lang").toggleClass("show");
-// }
+// bind onClick event to all LI-tags of the legend
+var legendItems = myLegendContainer.getElementsByTagName('li');
+for (var i = 0; i < legendItems.length; i += 1) {
+  legendItems[i].addEventListener("click", legendClickCallback, false);
+}
 
-// window.onclick = function(event) {
-//   if (!event.target.matches('.lang-btn')) {
-//     var dropdowns = $(".lang");
-//     for (let i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
+function legendClickCallback(event) {
+  event = event || window.event;
+
+  var target = event.target || event.srcElement;
+  while (target.nodeName !== 'LI') {
+      target = target.parentElement;
+  }
+  var parent = target.parentElement;
+  var chartId = parseInt(parent.classList[0].split("-")[0], 10);
+  var chart = Chart.instances[chartId];
+  var index = Array.prototype.slice.call(parent.children).indexOf(target);
+
+  chart.legend.options.onClick.call(chart, event, chart.legend.legendItems[index]);
+  if (chart.isDatasetVisible(index)) {
+    target.classList.remove('hidden');
+  } else {
+    target.classList.add('hidden');
+  }
+}
 
 
 // SLIDER
