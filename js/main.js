@@ -81,20 +81,6 @@ let front = {
               });
           })
       }
-      // $(document).ready(function() {
-      //   $(".accordion__item .accordion__button").on("click", function(e) {
-      //   e.preventDefault();
-      //       if ($(this).parent().hasClass("active")) {
-      //       $(this).parent().removeClass("active");
-      //       $(this).parent().find(".accordion__content").slideUp(200);
-      //       } else {
-      //       $(".accordion__item").removeClass("active");
-      //       $(this).parent().addClass("active");
-      //       $(".accordion__content").slideUp(200);
-      //       $(this).parent().find(".accordion__content").slideDown(200);
-      //       }
-      //   });
-      // });
     });
   },
   toggleNav: function () {
@@ -140,7 +126,7 @@ let front = {
       });
       $(document).on('click', '.scroll-to-top', function () {
         $('body,html').animate({
-            scrollTop : 0                       // Scroll to top of body
+            scrollTop : 0  // Scroll to top of body
         }, 500);
       });
   }
@@ -159,11 +145,46 @@ jQuery(function () {
 });
 
 
+
+
+// SLIDER
+(function() {
+  'use strict';
+  const breakpoint = window.matchMedia( '(min-width:992px)' );
+  let swiper;
+  const breakpointChecker = function() {
+    if ( breakpoint.matches === true ) {
+	  if ( swiper !== undefined ) swiper.destroy( true, true );
+	  return;
+      } else if ( breakpoint.matches === false ) {
+        return enableSwiper();
+
+      }
+  };
+  const enableSwiper = function() {
+    swiper = new Swiper ('.products-slider', {
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      a11y: true,
+      keyboardControl: true,
+      grabCursor: true,
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+
+    });
+  };
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
+})();
+
+// GRAPH 
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'line',
+    offset: true,
     data: {
-        labels: ['0','2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
+        labels: ['','2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
         datasets: [{
             label: 'Maisons',
             boxWidth: 10,
@@ -202,7 +223,7 @@ var myChart = new Chart(ctx, {
         text.push('</ul>'); 
         return text.join('');
       },
-      responsive: true,
+      responsive: false,
       legend: false,
         elements: {
             point:{
@@ -220,39 +241,34 @@ var myChart = new Chart(ctx, {
               fontColor: '#2D3237'
             }
           }],
-            yAxes: [{
-              scaleLabel: {
-                fontSize: 16,
-                display: true,
-                labelString: 'Prix/m²',
-                padding: 0,
+          yAxes: [{
+            scaleLabel: {
+              fontSize: 16,
+              display: true,
+              labelString: 'Prix/m²',
+              padding: 0,
+              fontColor: '#2D3237'
+            },
+            gridLines: {
+              color: "#e8e8e8",
+              borderDash: [4, 4],
+            },
+            ticks: {
+                beginAtZero: true,
+                min: 400,
+                max: 4000,
+                stepSize: 400,
+                fontSize: 14,
                 fontColor: '#2D3237'
-              
-              },
-              gridLines: {
-                color: "#e8e8e8",
-                borderDash: [4, 4],
-              },
-              ticks: {
-                  beginAtZero: true,
-                  min: 400,
-                  max: 4000,
-                  stepSize: 400,
-                  fontSize: 14,
-                  fontColor: '#2D3237'
-              }
-            }]
+            }
+          }]
         }
     }
 });
 
 
 var myLegendContainer = document.getElementById("myChartLegend");
-
-// generate HTML legend
 myLegendContainer.innerHTML = myChart.generateLegend();
-
-// bind onClick event to all LI-tags of the legend
 var legendItems = myLegendContainer.getElementsByTagName('li');
 for (var i = 0; i < legendItems.length; i += 1) {
   legendItems[i].addEventListener("click", legendClickCallback, false);
@@ -277,35 +293,241 @@ function legendClickCallback(event) {
     target.classList.add('hidden');
   }
 }
+Chart.pluginService.register({
+  beforeRender: function(chart) {
+    if (chart.config.options.showAllTooltips) {
+      // create an array of tooltips
+      // we can't use the chart tooltip because there is only one tooltip per chart
+      chart.pluginTooltips = [];
+      chart.config.data.datasets.forEach(function(dataset, i) {
+        chart.getDatasetMeta(i).data.forEach(function(sector, j) {
+          chart.pluginTooltips.push(new Chart.Tooltip({
+            _chart: chart.chart,
+            _chartInstance: chart,
+            _data: chart.data,
+            _options: chart.options.tooltips,
+            _active: [sector]
+          }, chart));
+        });
+      });
 
-
-// SLIDER
-(function() {
-  'use strict';
-  const breakpoint = window.matchMedia( '(min-width:992px)' );
-  let swiper;
-  const breakpointChecker = function() {
-    if ( breakpoint.matches === true ) {
-	  if ( swiper !== undefined ) swiper.destroy( true, true );
-	  return;
-      } else if ( breakpoint.matches === false ) {
-        return enableSwiper();
-
+      // turn off normal tooltips
+      chart.options.tooltips.enabled = false;
+    }
+  },
+  afterDraw: function(chart, easing) {
+    if (chart.config.options.showAllTooltips) {
+      // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+      if (!chart.allTooltipsOnce) {
+        if (easing !== 1)
+          return;
+        chart.allTooltipsOnce = true;
       }
-  };
-  const enableSwiper = function() {
-    swiper = new Swiper ('.products-slider', {
-      loop: true,
-      slidesPerView: 'auto',
-      centeredSlides: true,
-      a11y: true,
-      keyboardControl: true,
-      grabCursor: true,
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
 
+      // turn on tooltips
+      chart.options.tooltips.enabled = true;
+      Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
+        tooltip.initialize();
+        tooltip.update();
+        // we don't actually need this since we are not animating tooltips
+        tooltip.pivot();
+        tooltip.transition(easing).draw();
+      });
+      chart.options.tooltips.enabled = false;
+    }
+  }
+});
+
+
+// DIAGRAMS PRICE
+Chart.defaults.global.defaultFontFamily = "Gellix";
+
+var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
+  type: 'horizontalBar',
+  data: {
+     labels: ["Voreppe", "Fontaine", "Lyon", "Grenoble", "Saint Egrève", "Echirolle", "Voiron"],
+     datasets: [{
+        data: [2200, 1750, 1550, 1360, 1180, 1180, 1180],
+        backgroundColor: ["#E1F6FF", "#E1F6FF", "#E1F6FF", "#0F6E94", "#E1F6FF", "#E1F6FF", "#E1F6FF"], 
+     }]
+  },
+  options: {
+    showAllTooltips: true,
+    cornerRadius: 100,
+     tooltips: {
+       enabled: true,
+       cornerRadius: 10,
+       caretSize: 0,
+       xPadding: 16,
+       yPadding: 8,
+       fontColor: '#0F6E94',
+       bodyFontColor: '#0F6E94;',
+       bodyFontSize: 16,
+       bodyFontFamily: 'Gellix-bold',
+       titleFontSize: 16,
+       titleFontColor: '#333333',
+       backgroundColor: '#E1F6FF',
+       titleFontStyle: 'normal',
+       titleMarginBottom: 10,
+       reversed: true,
+       filter: function (tooltipItem, data) {
+        var label = data.labels[tooltipItem.index];
+        if (label !== "Grenoble") {
+          return false;
+        } else {
+          return true;
+        }
+       },
+       callbacks: {
+        label: function(tooltipItems, data) { 
+            return tooltipItems.value + "€/m²";
+        },
+       },
+     },
+     responsive: true,
+     legend: {
+        display: false,
+     },
+     scales: {
+        yAxes: [{
+          categoryPercentage: .5,
+          barPercentage: .30,
+          gridLines: {
+            display: false,
+            drawTicks: true,
+            color: "#e8e8e8",
+            borderDash: [4, 4],
+            drawOnChartArea: false
+          },
+          ticks: {
+            display: true,
+            fontColor: '#555759',
+            fontSize: 14,
+            fontFamily: 'Gellix'
+          }
+           
+        }],
+        xAxes: [{
+            gridLines: {
+              color: "#e8e8e8",
+              borderDash: [4, 4],
+              display: true,
+              drawTicks: false,
+              tickMarkLength: 5,
+              drawBorder: false,
+            },
+          ticks: {
+            padding: 0,
+            beginAtZero: true,
+            fontFamily: 'Gellix',
+            fontColor: '#555759',
+            fontSize: 12,   
+            min: 400,
+            max: 2400,
+            stepSize: 400,
+            callback: function(value, index, values) {
+              return value + '€/m²';
+            }
+          },
+        }]
+     },
+  }
+});
+
+// HALF DOUGHNUT
+var configd = {
+  type: 'doughnut',
+  data: {
+      labels: ["50m²", "50 - 100 m²", "150-200m²", "+ 200m²"],
+      datasets: [{
+          data: [35, 40, 25, 25],
+          backgroundColor: [
+              '#0F6E94',
+              '#FF7F31',
+              '#AB66EB',
+              '#62D390'
+          ],
+          borderColor: [
+              'rgba(255, 255, 255 ,1)',
+              'rgba(255, 255, 255 ,1)',
+              'rgba(255, 255, 255 ,1)',
+              'rgba(255, 255, 255 ,1)'
+          ],
+          borderWidth: 3
+      }]
+
+  },
+  options: {
+      responsive: true,
+      rotation: 1 * Math.PI,
+      circumference: 1 * Math.PI,
+      cutoutPercentage: 80,
+      tooltip: {
+          enabled: false
+      },
+      legend: {
+          display: false
+      },
+      layout: {
+        padding: 20,
+    },
+      legendCallback: function (chart) {             
+          // Return the HTML string here.
+          console.log(chart.data.datasets);
+          var text = [];
+          text.push('<ul class="' + chart.id + '-legend">');
+          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+              text.push('<li><span class="color" style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '"></span><span id="legend-' + i + '-item">');
+              if (chart.data.labels[i]) {
+                  text.push('<span>' + chart.data.datasets[0].data[i] + '%</span>')
+                  text.push(chart.data.labels[i]);
+              }
+              text.push('</span></li>');
+          }
+          text.push('</ul>');
+          return text.join("");
+      },
+      animation: {
+          animateScale: true,
+          animateRotate: true
+      },
+  }
+};
+
+var ctxd = document.getElementById('diagramDetails').getContext('2d');
+  
+  window.myDoughnut = new Chart(ctxd, configd);
+  $("#do_legend").html(window.myDoughnut.generateLegend());
+
+
+
+
+var app = {
+  init: function(){
+    this.cacheDOM();
+    this.handleCharts();
+  },
+  cacheDOM: function(){
+    this.$chart = $(".bar-chart");
+  },
+  cssSelectors: {
+    chartBar: "bar-chart--inner"
+  },
+  handleCharts: function(){
+    /* 
+      iterate through charts and grab total value
+      then apply that to the width of the inner bar
+    */
+    $.each(this.$chart, function(){
+      var $this = $(this),
+          total = $this.data("total"),
+          $targetBar = $this.find("."+app.cssSelectors.chartBar);
+          // $targetBar.css("width","0%"); // zero out for animation
+          // setTimeout(function(){
+          //   $targetBar.css("width",total+"%");
+          // },400);
     });
-  };
-  breakpoint.addListener(breakpointChecker);
-  breakpointChecker();
-})();
+  }
+}
+
+app.init();
