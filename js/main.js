@@ -57,10 +57,8 @@ let front = {
       e.preventDefault();
           if ($(this).parent().hasClass("active")) {
           $(this).parent().removeClass("active");
-          $(this).parent().find(".accordion__content").slideUp(200);
           } else {
           $(this).parent().addClass("active");
-          $(this).parent().find(".accordion__content").slideDown(200);
           }
       });
       let langToggle = document.querySelector('.lang-select-wrapper') !== null;
@@ -276,7 +274,7 @@ var myChart = new Chart(ctx, {
 });
 
 
-var myLegendContainer = document.getElementById("myChartLegend");
+var myLegendContainer = document.getElementById("chart-legend");
 myLegendContainer.innerHTML = myChart.generateLegend();
 var legendItems = myLegendContainer.getElementsByTagName('li');
 for (var i = 0; i < legendItems.length; i += 1) {
@@ -506,7 +504,7 @@ var configd = {
 var ctxd = document.getElementById('diagramDetails').getContext('2d');
   
   window.myDoughnut = new Chart(ctxd, configd);
-  $("#do_legend").html(window.myDoughnut.generateLegend());
+  $("#diagramDetailsLegend").html(window.myDoughnut.generateLegend());
 
 
 
