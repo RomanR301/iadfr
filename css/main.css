@@ -277,8 +277,8 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #ffffff;
   margin-bottom: 30px;
   font-weight: 700;
-  font-size: 54px;
-  font-size: calc( 30px + (54 - 30) * ((100vw - 300px) / (1900 - 300)));
+  font-size: 58px;
+  font-size: calc( 34px + (58 - 34) * ((100vw - 300px) / (1900 - 300)));
 }
 
 .main-screen__content h1 span {
@@ -593,10 +593,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .footer-copyright li {
   margin: 0 10px;
-}
-
-.footer-copyright .btn-primary {
-  display: none;
 }
 
 .lang-options {

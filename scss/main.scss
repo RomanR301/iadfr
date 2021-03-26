@@ -309,7 +309,7 @@ input[type="search"]::-webkit-search-results-decoration {
       color: $whiteColor;
       margin-bottom: 30px;
       font-weight: 700;
-      @include fontSize(30, 54);
+      @include fontSize(34, 58);
       & span {
         color: $whiteColor;
         font-style: italic;
@@ -610,9 +610,6 @@ input[type="search"]::-webkit-search-results-decoration {
     }
     & li {
       margin: 0 10px;
-    }
-    & .btn-primary {
-      display: none;
     }
   }
 }

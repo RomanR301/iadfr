@@ -1191,7 +1191,7 @@
   margin: 0 10px;
 }
 
-.footer-copyright .btn-primary {
+.footer-cta {
   display: none;
 }
 
@@ -1846,7 +1846,7 @@
     width: 100%;
     margin-bottom: 70px;
   }
-  .diagrams-features {
+  .diagrams .diagrams-features {
     width: 100%;
     margin-bottom: 70px;
   }
@@ -1902,7 +1902,7 @@
   .footer .column-socials {
     padding: 0;
     width: 100%;
-    margin-top: -105px;
+    margin-top: -100px;
   }
   .footer-unis {
     width: 100%;
@@ -1919,6 +1919,10 @@
   .lang-option {
     margin: 0 10px;
   }
+  .footer-copyright .container {
+    flex-direction: column;
+    align-items: center;
+  }
   .footer-copyright .row {
     width: 100%;
     text-align: center;
@@ -1932,15 +1936,30 @@
   .footer-copyright ul li {
     margin: 8px 0 20px 0;
   }
-  .footer-copyright a.btn-primary {
-    display: block;
-    margin-top: 50px;
+  .footer {
+    padding: 30px 0 0 0;
+  }
+  .footer-title {
+    margin-bottom: 20px;
+  }
+  .scroll-to-top {
+    top: -51px;
+    right: 14px;
   }
 }
 
 @media (max-width: 576px) {
-  .prices-item__value {
-    font-size: 14px;
+  .section-heading {
+    padding: 0 20px;
+  }
+  .graph {
+    margin-top: 30px;
+  }
+  .products-list .swiper-pagination {
+    margin-top: -20px;
+  }
+  .main-screen h1 {
+    margin-top: 50px;
   }
   .prices-row {
     margin: 15px 0;
@@ -1953,6 +1972,12 @@
   }
   .products-banner {
     width: 100%;
+  }
+  .banner-inner {
+    padding: 45px 40px;
+  }
+  .banner-inner p {
+    margin: 10px 0 30px 0;
   }
   .faq-tabs .table-row .table-cell:nth-child(2).table-heading,
   .faq-tabs .table-row .table-cell:nth-child(3).table-heading,
@@ -1979,6 +2004,22 @@
   }
   .faq-image {
     width: 100%;
+  }
+  .footer .footer-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    z-index: 99;
+  }
+  .footer-copyright {
+    margin-bottom: 80px;
   }
 }
 
