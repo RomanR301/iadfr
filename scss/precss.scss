@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icon-hospital:before {
+  content: "\e909";
+}
+.icon-icon-service:before {
+  content: "\e907";
+}
 .icon-facebook:before {
   content: "\e901";
 }
@@ -61,6 +67,7 @@
 .icon-icon-station:before {
   content: "\e90d";
 }
+
 
 .icon-icon {
   & img {

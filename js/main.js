@@ -2,6 +2,7 @@ let front = {
   hamburger: $('.hamburger'),
   nav: $('.navbar'),
   body: $('body'),
+  header: $('header'),
   init: function () {
       this.events();      
 
@@ -10,6 +11,9 @@ let front = {
         spaceBetween: 30,
         allowTouchMove: false,
         loop: false,
+        pagination: {
+          el: '.recent-pagination',
+        },
         breakpoints: {
             320: {
               slidesPerView: 1,
@@ -88,8 +92,10 @@ let front = {
         this.hamburger.addClass('open');
         this.nav.addClass('active');
         this.body.addClass('overflow');
+        this.header.addClass('menu-open');
         } else {
             this.hamburger.removeClass('open');
+            this.header.removeClass('menu-open')
             this.nav.removeClass('active');
             this.body.removeClass('overflow');
         }
@@ -118,7 +124,7 @@ let front = {
           self.toggleNav();
       });
       $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
+        if ($(this).scrollTop() > 40) {
           $('header').addClass("scroll-header");
         } else {
           $('header').removeClass("scroll-header");
@@ -135,13 +141,6 @@ let front = {
 jQuery(function () {
   front.init();
   // make space between absolute positioned elements when window loads
-  var maxHeight=0; 
-  $(".faq-tabs .accordion__content").each(function () {
-      if (maxHeight < $(this).height()) {
-        maxHeight=$(this).height()
-      }
-  })
-  $(".faq-tabs").height(maxHeight);
 });
 
 
@@ -155,6 +154,14 @@ jQuery(function () {
   const breakpointChecker = function() {
     if ( breakpoint.matches === true ) {
 	  if ( swiper !== undefined ) swiper.destroy( true, true );
+    var maxHeight=0; 
+    $(".faq-tabs .accordion__content").each(function () {
+        if (maxHeight < $(this).height()) {
+          maxHeight=$(this).height()
+        }
+    })
+    $(".faq-tabs").height(maxHeight);
+    
 	  return;
       } else if ( breakpoint.matches === false ) {
         return enableSwiper();
@@ -167,9 +174,12 @@ jQuery(function () {
       slidesPerView: 'auto',
       centeredSlides: true,
       a11y: true,
+      spaceBetween: 30,
       keyboardControl: true,
       grabCursor: true,
-      pagination: '.swiper-pagination',
+      pagination: {
+        el: '.swiper-pagination',
+      },
       paginationClickable: true,
 
     });
@@ -182,7 +192,6 @@ jQuery(function () {
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'line',
-    offset: true,
     data: {
         labels: ['','2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
         datasets: [{
@@ -223,7 +232,7 @@ var myChart = new Chart(ctx, {
         text.push('</ul>'); 
         return text.join('');
       },
-      responsive: false,
+      responsive: true,
       legend: false,
         elements: {
             point:{
@@ -358,13 +367,13 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
        enabled: true,
        cornerRadius: 10,
        caretSize: 0,
-       xPadding: 16,
+       xPadding: 10,
        yPadding: 8,
        fontColor: '#0F6E94',
        bodyFontColor: '#0F6E94;',
-       bodyFontSize: 16,
+       bodyFontSize: 14,
        bodyFontFamily: 'Gellix-bold',
-       titleFontSize: 16,
+       titleFontSize: 14,
        titleFontColor: '#333333',
        backgroundColor: '#E1F6FF',
        titleFontStyle: 'normal',
