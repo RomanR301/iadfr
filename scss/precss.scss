@@ -367,6 +367,9 @@ $whiteColor: #ffffff;
       align-items: center;
       justify-content: center;
     }
+    &__value {
+      white-space: nowrap;
+    }
     &__amount {
       margin-bottom: 2px;
     }
@@ -1142,6 +1145,10 @@ $whiteColor: #ffffff;
     & .row {
       margin: 0;
     }
+  }
+  .prices-image {
+    width: 90%;
+    margin-left: auto;
   }
   .graph-additional .table-row .table-cell:first-child {
     padding-left: 20px;

@@ -680,6 +680,10 @@
   justify-content: center;
 }
 
+.prices-item__value {
+  white-space: nowrap;
+}
+
 .prices-item__amount {
   margin-bottom: 2px;
 }
@@ -1586,6 +1590,10 @@
 @media (max-width: 1200px) {
   .header .row {
     margin: 0;
+  }
+  .prices-image {
+    width: 90%;
+    margin-left: auto;
   }
   .graph-additional .table-row .table-cell:first-child {
     padding-left: 20px;
