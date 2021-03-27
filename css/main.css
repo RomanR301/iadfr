@@ -290,7 +290,38 @@ input[type="search"]::-webkit-search-results-decoration {
   background: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 21px;
+  font-family: inherit;
+  font-size: inherit;
   outline: none;
+}
+
+.form-group input:focus ~ .search-output {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-output {
+  border-radius: 21px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.search-output__list {
+  list-style: none;
+}
+
+.search-output li:last-child {
+  margin-bottom: 0;
+}
+
+.search-output__link {
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.35s linear;
+}
+
+.search-output__link:hover {
+  color: #0f6e94;
 }
 
 .prices-row-title {
@@ -509,8 +540,16 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .faq-tabs .table-row .table-cell:first-child {
-  color: #0f6e94;
   font-size: 14px;
+}
+
+.faq-tabs .table-row .table-cell:first-child a {
+  color: #0f6e94;
+  text-decoration: none;
+}
+
+.faq-tabs .table-row .table-cell:first-child a:hover {
+  text-decoration: underline;
 }
 
 .faq-tabs .table-heading {

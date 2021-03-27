@@ -322,7 +322,37 @@ input[type="search"]::-webkit-search-results-decoration {
     background: #ffffff;
     border: 1px solid #e5e5e5;
     border-radius: 21px;
+    font-family: inherit;
+    font-size: inherit;
     outline: none;
+    &:focus {
+      ~ .search-output {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+.search-output {
+  border-radius: 21px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+  overflow: hidden;
+  &__list {
+    list-style: none;
+
+  }
+  & li {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.35s linear;
+    &:hover {
+      color: $blueColor;
+    }
   }
 }
 .prices {
@@ -539,8 +569,14 @@ input[type="search"]::-webkit-search-results-decoration {
         border-right: none;
       }
       & .table-cell:first-child {
-        color: $blueColor;
         font-size: 14px;
+        & a {
+          color: $blueColor;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
     &-heading {
