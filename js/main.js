@@ -187,11 +187,11 @@ jQuery(function () {
 })();
 
 // GRAPH 
-var ctx = document.getElementById('myChart');
+var ctx = document.getElementById('chart-graph');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['','2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
+        labels: ['', '2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2018'],
         datasets: [{
             label: 'Maisons',
             boxWidth: 10,
@@ -232,9 +232,26 @@ var myChart = new Chart(ctx, {
       },
       responsive: true,
       legend: false,
+      tooltips: {
+        mode: 'nearest',
+        intersect: false,
+        enabled: true,  
+        backgroundColor: '#e1f6ff',
+        cornerRadius: 0,
+        caretSize: 0,
+        xPadding: 16,
+        yPadding: 10,
+        bodyFontColor: '#333333',
+        titleFontColor: '#333333',
+        titleFontStyle: 'normal',
+        titleMarginBottom: 10
+      },
         elements: {
             point:{
-                radius: 0
+                radius: 3,
+                hoverRadius: 3,
+                backgroundColor: '#e1f6ff',
+                borderColor: '#0f6e94'
             }
         },
         scales: {
@@ -281,6 +298,7 @@ for (var i = 0; i < legendItems.length; i += 1) {
   legendItems[i].addEventListener("click", legendClickCallback, false);
 }
 
+
 function legendClickCallback(event) {
   event = event || window.event;
 
@@ -300,50 +318,52 @@ function legendClickCallback(event) {
     target.classList.add('hidden');
   }
 }
-Chart.pluginService.register({
-  beforeRender: function(chart) {
-    if (chart.config.options.showAllTooltips) {
-      // create an array of tooltips
-      // we can't use the chart tooltip because there is only one tooltip per chart
-      chart.pluginTooltips = [];
-      chart.config.data.datasets.forEach(function(dataset, i) {
-        chart.getDatasetMeta(i).data.forEach(function(sector, j) {
-          chart.pluginTooltips.push(new Chart.Tooltip({
-            _chart: chart.chart,
-            _chartInstance: chart,
-            _data: chart.data,
-            _options: chart.options.tooltips,
-            _active: [sector]
-          }, chart));
-        });
-      });
 
-      // turn off normal tooltips
-      chart.options.tooltips.enabled = false;
-    }
-  },
-  afterDraw: function(chart, easing) {
-    if (chart.config.options.showAllTooltips) {
-      // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
-      if (!chart.allTooltipsOnce) {
-        if (easing !== 1)
-          return;
-        chart.allTooltipsOnce = true;
-      }
 
-      // turn on tooltips
-      chart.options.tooltips.enabled = true;
-      Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
-        tooltip.initialize();
-        tooltip.update();
-        // we don't actually need this since we are not animating tooltips
-        tooltip.pivot();
-        tooltip.transition(easing).draw();
-      });
-      chart.options.tooltips.enabled = false;
-    }
-  }
-});
+// Chart.pluginService.register({
+//   beforeRender: function(chart) {
+//     if (chart.config.options.showAllTooltips) {
+//       // create an array of tooltips
+//       // we can't use the chart tooltip because there is only one tooltip per chart
+//       chart.pluginTooltips = [];
+//       chart.config.data.datasets.forEach(function(dataset, i) {
+//         chart.getDatasetMeta(i).data.forEach(function(sector, j) {
+//           chart.pluginTooltips.push(new Chart.Tooltip({
+//             _chart: chart.chart,
+//             _chartInstance: chart,
+//             _data: chart.data,
+//             _options: chart.options.tooltips,
+//             _active: [sector]
+//           }, chart));
+//         });
+//       });
+
+//       // turn off normal tooltips
+//       chart.options.tooltips.enabled = false;
+//     }
+//   },
+//   afterDraw: function(chart, easing) {
+//     if (chart.config.options.showAllTooltips) {
+//       // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+//       if (!chart.allTooltipsOnce) {
+//         if (easing !== 1)
+//           return;
+//         chart.allTooltipsOnce = true;
+//       }
+
+//       // turn on tooltips
+//       chart.options.tooltips.enabled = true;
+//       Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
+//         tooltip.initialize();
+//         tooltip.update();
+//         // we don't actually need this since we are not animating tooltips
+//         tooltip.pivot();
+//         tooltip.transition(easing).draw();
+//       });
+//       chart.options.tooltips.enabled = false;
+//     }
+//   }
+// });
 
 
 // DIAGRAMS PRICE
@@ -363,12 +383,15 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
     cornerRadius: 100,
      tooltips: {
        enabled: true,
+       position: 'average',
+       mode: 'nearest',
+       intersect: false,
        cornerRadius: 10,
        caretSize: 0,
        xPadding: 10,
        yPadding: 8,
        fontColor: '#0F6E94',
-       bodyFontColor: '#0F6E94;',
+       bodyFontColor: '#0f6e94',
        bodyFontSize: 14,
        bodyFontFamily: 'Gellix-bold',
        titleFontSize: 14,
@@ -377,19 +400,19 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
        titleFontStyle: 'normal',
        titleMarginBottom: 10,
        reversed: true,
-       filter: function (tooltipItem, data) {
-        var label = data.labels[tooltipItem.index];
-        if (label !== "Grenoble") {
-          return false;
-        } else {
-          return true;
-        }
-       },
-       callbacks: {
-        label: function(tooltipItems, data) { 
-            return tooltipItems.value + "€/m²";
-        },
-       },
+      //  filter: function (tooltipItem, data) {
+      //   var label = data.labels[tooltipItem.index];
+      //   if (label !== "Grenoble") {
+      //     return false;
+      //   } else {
+      //     return true;
+      //   }
+      //  },
+      //  callbacks: {
+      //   label: function(tooltipItems, data) { 
+      //       return tooltipItems.value + "€/m²";
+      //   },
+      //  },
      },
      responsive: true,
      legend: {
