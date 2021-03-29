@@ -185,7 +185,7 @@ $whiteColor: #ffffff;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 201;
+  z-index: 10001;
   height: 90px;
   & .container {
     max-width: 1200px;
@@ -334,6 +334,7 @@ $whiteColor: #ffffff;
   width: 70%;
   top: 60px;
   background: #ffffff;
+  z-index: 10000;
   &__list {
     text-align: left;
     padding: 15px 25px 15px 25px;
@@ -353,15 +354,25 @@ $whiteColor: #ffffff;
   padding: 56px 0;
   & .row {
     justify-content: space-between;
+    align-items: flex-end;
   }
 
-  &-image {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    & img {
-      @include defaultIcon(contain);
-      height: auto;
+  // &-image {
+  //   display: flex;
+  //   align-items: flex-end;
+  //   height: 100%;
+  //   & img {
+  //     @include defaultIcon(contain);
+  //     height: auto;
+  //   }
+  // }
+  & .map-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    & #osm-map {
+      height: 100%;
     }
   }
   &-row {
@@ -1638,6 +1649,35 @@ $whiteColor: #ffffff;
   .footer-copyright {
     margin-bottom: 80px;
   }
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0!important;
+  border-radius: 15px!important;
+}
+.leaflet-popup-content {
+  margin: 0!important;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 220px!important;
+  & img {
+    width: 100%;
+  }
+  & h3 {
+    font-size: 19px;
+    font-weight: 600;
+    padding: 4px 14px;
+  }
+  & .products-item__subtitle {
+    margin: 0 0 10px 0;
+    padding: 4px 14px;
+  }
+  & .products-item__price {
+    font-size: 20px;
+  }
+}
+.leaflet-container a.leaflet-popup-close-button{
+  color: #ffffff!important;
 }
 // STYLES FOR SWIPER SLIDER PLUGIN
 /**

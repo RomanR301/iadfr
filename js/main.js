@@ -375,7 +375,8 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
      labels: ["Voreppe", "Fontaine", "Lyon", "Grenoble", "Saint Egrève", "Echirolle", "Voiron"],
      datasets: [{
         data: [2200, 1750, 1550, 1360, 1180, 1180, 1180],
-        backgroundColor: ["#E1F6FF", "#E1F6FF", "#E1F6FF", "#0F6E94", "#E1F6FF", "#E1F6FF", "#E1F6FF"], 
+        backgroundColor: ["#E1F6FF", "#E1F6FF", "#E1F6FF", "#E1F6FF", "#E1F6FF", "#E1F6FF", "#E1F6FF"], 
+        hoverBackgroundColor: '#0f6e94',
      }]
   },
   options: {
@@ -383,12 +384,9 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
     cornerRadius: 100,
      tooltips: {
        enabled: true,
-       position: 'average',
-       mode: 'nearest',
-       intersect: false,
        cornerRadius: 10,
        caretSize: 0,
-       xPadding: 10,
+       xPadding: 14,
        yPadding: 8,
        fontColor: '#0F6E94',
        bodyFontColor: '#0f6e94',
@@ -399,7 +397,7 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
        backgroundColor: '#E1F6FF',
        titleFontStyle: 'normal',
        titleMarginBottom: 10,
-       reversed: true,
+      //  reversed: true,
       //  filter: function (tooltipItem, data) {
       //   var label = data.labels[tooltipItem.index];
       //   if (label !== "Grenoble") {
@@ -408,11 +406,11 @@ var horizontalBarChart = new Chart(horizontalBarChartCanvas, {
       //     return true;
       //   }
       //  },
-      //  callbacks: {
-      //   label: function(tooltipItems, data) { 
-      //       return tooltipItems.value + "€/m²";
-      //   },
-      //  },
+       callbacks: {
+        label: function(tooltipItems, data) { 
+            return tooltipItems.value + "€/m²";
+        },
+       },
      },
      responsive: true,
      legend: {

@@ -11,6 +11,31 @@
           <form action="">
             <div class="form-group">
               <input type="search" name="main-search" id="main-search">
+              <div class="search-output">
+                <ul class="search-output__list">
+                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                      SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE Appartement de
+                      71 m² - 2 chambres - LILLE</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                      SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                      SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                      SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                      SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                </ul>
+              </div>
               <button class="btn-primary" type="submit">Recherche</button>
             </div>
           </form>
@@ -276,8 +301,8 @@
           </div>
         </div>
         <div class="col-lg-5 col-xs-12">
-          <div class="prices-image">
-            <img src="./img/map-placeholder.jpg" alt="map placeholder image">
+          <div class="map-container">
+            <div id="osm-map"></div>
           </div>
         </div>
       </div>
@@ -303,7 +328,7 @@
         </h2>
         <div class="chart-container">
           <div id="chart-legend"></div>
-          <canvas id="myChart" width="630" height="400"></canvas>
+          <canvas id="chart-graph" width="630" height="450"></canvas>
         </div>
       </div>
       <div class="graph-additional">
@@ -687,11 +712,7 @@
   </section>
   <section class="recent">
     <div class="container">
-
       <h2 class="section-heading">Biens récemment vendus à Grenoble 38000</h2>
-
-
-
       <div class="swiper-container recent-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -850,7 +871,6 @@
         </div>
         <div class="swiper-pagination recent-pagination"></div>
       </div>
-
     </div>
   </section>
   <section class="banner">
@@ -860,7 +880,6 @@
           <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
           <p>Simulez la valeur de votre bien en ligne et bénéficiez de conseils d’un mandataire immobilier IAD </p>
         </div>
-
         <div class="banner-btn">
           <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
         </div>
@@ -885,72 +904,67 @@
                     <div class="table-cell table-heading">Prix des appartement au m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
@@ -965,67 +979,57 @@
               <div class="accordion__content">
                 <div class="table">
                   <div class="table-row">
-                    <div class="table-cell table-heading">Ville2</div>
+                    <div class="table-cell table-heading">Ville</div>
                     <div class="table-cell table-heading">Prix des maisons au m²</div>
                     <div class="table-cell table-heading">Prix des appartement au m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon2</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
@@ -1040,57 +1044,67 @@
               <div class="accordion__content">
                 <div class="table">
                   <div class="table-row">
-                    <div class="table-cell table-heading">Ville3</div>
+                    <div class="table-cell table-heading">Ville</div>
                     <div class="table-cell table-heading">Prix des maisons au m²</div>
                     <div class="table-cell table-heading">Prix des appartement au m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon3</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                    <div class="table-cell">5000€/m²</div>
+                    <div class="table-cell">5000€/m²</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                    <div class="table-cell">5000€/m²</div>
+                    <div class="table-cell">5000€/m²</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
@@ -1105,92 +1119,52 @@
               <div class="accordion__content">
                 <div class="table">
                   <div class="table-row">
-                    <div class="table-cell table-heading">Ville4</div>
+                    <div class="table-cell table-heading">Ville</div>
                     <div class="table-cell table-heading">Prix des maisons au m²</div>
                     <div class="table-cell table-heading">Prix des appartement au m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>
                   <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell">Prix immobilier Lyon4</div>
+                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                     <div class="table-cell">5000€/m²</div>
                     <div class="table-cell">5000€/m²</div>
                   </div>

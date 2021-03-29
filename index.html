@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/precss.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/leaflet-map.css">
 
   <title>iadfrance</title>
 </head>
@@ -57,19 +58,25 @@
                 <div class="search-output">
                   <ul class="search-output__list">
                     <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE Appartement de
+                        71 m² - 2 chambres - LILLE</a></li>
                     <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
                     <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
                     <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
                     <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
                     <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
                     <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
                     <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
                     <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
                   </ul>
                 </div>
@@ -338,8 +345,8 @@
             </div>
           </div>
           <div class="col-lg-5 col-xs-12">
-            <div class="prices-image">
-              <img src="./img/map-placeholder.jpg" alt="map placeholder image">
+            <div class="map-container">
+              <div id="osm-map"></div>
             </div>
           </div>
         </div>
@@ -1169,7 +1176,7 @@
                       <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                       <div class="table-cell">5000€/m²</div>
                       <div class="table-cell">5000€/m²</div>
-                    </div>  
+                    </div>
                     <div class="table-row">
                       <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
                       <div class="table-cell">5000€/m²</div>
@@ -1375,8 +1382,55 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/chart.min.js"></script>
   <script src="./js/swiper.min.js"></script>
+  <script src="./js/leaflet-map.min.js"></script>
   <script src="./js/main.js"></script>
 
+  <script>
+    var map = L.map('osm-map').setView([45.189167, 5.725182], 14.5);
+    mapLink =
+      '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer(
+      'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; ' + mapLink + ' Contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    var customIcon = new L.icon({
+        iconUrl: '../img/icons/map-marker.svg',
+        iconSize: [18, 24],
+        popupAnchor: [0,-10]
+      });
+      var customPopup = `
+      <img src='../img/recent-products-image.jpg' alt='apartments 1'/>
+        <h3>Appartement lumineux à l'île verte</h3>
+        <div class="products-item__subtitle">
+          <div class="products-item__price">415 000€</div>
+              <div class="products-item__location">
+                <i class="icon-icon-marker"></i>Grenoble
+            </div>
+          </div>
+      `;
+    var locations = [
+      [45.18915, 5.72517],
+      [45.18844, 5.72419],
+      [45.18594, 5.72469],
+      [45.18584, 5.72799],
+      [45.19454, 5.72299],
+      [45.18554, 5.71599],
+      [45.18854, 5.72999],
+      [45.18954, 5.72020],
+      [45.19254, 5.72920],
+      [45.19154, 5.73120],
+      [45.18854, 5.73450],
+      [45.19254, 5.71750]
+    ];
+      for (var i = 0; i < locations.length; i++) {
+      marker = new L.marker([locations[i][0], locations[i][1]], {icon: customIcon})
+        .bindPopup(customPopup)
+        .addTo(map);
+    }
+  </script>
 </body>
 
 </html>
+

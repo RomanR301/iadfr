@@ -442,7 +442,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 201;
+  z-index: 10001;
   height: 90px;
 }
 
@@ -632,6 +632,7 @@
   width: 70%;
   top: 60px;
   background: #ffffff;
+  z-index: 10000;
 }
 
 .search-output__list {
@@ -656,21 +657,18 @@
 
 .prices .row {
   justify-content: space-between;
-}
-
-.prices-image {
-  display: flex;
   align-items: flex-end;
-  height: 100%;
 }
 
-.prices-image img {
-  display: block;
+.prices .map-container {
+  height: 400px;
   width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.prices .map-container #osm-map {
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: auto;
 }
 
 .prices-row {
@@ -2065,6 +2063,41 @@
   .footer-copyright {
     margin-bottom: 80px;
   }
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 15px !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 220px !important;
+}
+
+.leaflet-popup-content img {
+  width: 100%;
+}
+
+.leaflet-popup-content h3 {
+  font-size: 19px;
+  font-weight: 600;
+  padding: 4px 14px;
+}
+
+.leaflet-popup-content .products-item__subtitle {
+  margin: 0 0 10px 0;
+  padding: 4px 14px;
+}
+
+.leaflet-popup-content .products-item__price {
+  font-size: 20px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #ffffff !important;
 }
 
 /**
