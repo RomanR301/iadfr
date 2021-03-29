@@ -2081,10 +2081,21 @@
   width: 100%;
 }
 
-.leaflet-popup-content h3 {
+.leaflet-popup-content .map-image {
+  display: block;
+}
+
+.leaflet-popup-content .map-link {
   font-size: 19px;
   font-weight: 600;
   padding: 4px 14px;
+  display: block;
+  color: #333333;
+  text-decoration: none;
+}
+
+.leaflet-popup-content .map-link:hover {
+  text-decoration: underline;
 }
 
 .leaflet-popup-content .products-item__subtitle {

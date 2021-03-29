@@ -356,16 +356,6 @@ $whiteColor: #ffffff;
     justify-content: space-between;
     align-items: flex-end;
   }
-
-  // &-image {
-  //   display: flex;
-  //   align-items: flex-end;
-  //   height: 100%;
-  //   & img {
-  //     @include defaultIcon(contain);
-  //     height: auto;
-  //   }
-  // }
   & .map-container {
     height: 400px;
     width: 100%;
@@ -1663,10 +1653,19 @@ $whiteColor: #ffffff;
   & img {
     width: 100%;
   }
-  & h3 {
+  & .map-image {
+    display: block;
+  }
+  & .map-link {
     font-size: 19px;
     font-weight: 600;
     padding: 4px 14px;
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
   }
   & .products-item__subtitle {
     margin: 0 0 10px 0;
