@@ -1,597 +1,362 @@
-<main>
-  <section class="main-screen">
-    <div class="container">
-      <div class="main-screen__image">
-        <img class="desktop" src="./img/main-screen-bg.jpg" alt="">
-        <img class="mobile" src="./img/main-screen-bg-mob.jpg" alt="">
-      </div>
-      <div class="main-screen__content">
-        <h1>Prix de l’immobilier au m2 <span>à Grenoble 38000</span></h1>
-        <div class="main-screen__search">
-          <form action="">
-            <div class="form-group">
-              <input type="search" name="main-search" id="main-search">
-              <div class="search-output">
-                <ul class="search-output__list">
-                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE Appartement de 71 m² - 2 chambres - LILLE</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
-                  <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres - SAINT-YRIEIX-SUR-CHARENTE</a></li>
-                  <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
-                </ul>
-              </div>
-              <button class="btn-primary" type="submit">Recherche</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="prices">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/precss.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/leaflet-map.css">
+
+  <title>iadfrance</title>
+</head>
+
+<body>
+  <header class="header">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-xs-12">
-          <div class="tabs">
-            <ul class="tabs-list tabs-ul">
-              <li class="tabs-list__item">
-                <a onclick="front.openTab(this, 'tab-0','.tabs')" class="tabs-list__item_link tab-links active">Prix
-                  de vente à Grenoble</a>
-              </li>
-              <li class="tabs-list__item">
-                <a onclick="front.openTab(this, 'tab-1','.tabs')" class="tabs-list__item_link tab-links">Prix du loyer
-                  à Grenoble</a>
-              </li>
-            </ul>
-            <div class="tabs-wrap">
-              <div class="tab-content active" id="tab-0">
-                <div class="prices-row">
-                  <h2 class="prices-row-title">
-                    Prix de vente moyen par type de bien à Grenoblev
-                  </h2>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">300 000€</div>
-                        <div class="prices-item__type">Appartement</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">400 000€</div>
-                        <div class="prices-item__type">Maison</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">500 000€</div>
-                        <div class="prices-item__type">Locaux commerciaux et bureaux</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="prices-row">
-                  <h2 class="prices-row-title">Prix de vente moyen par type de bien à Grenoblev</h2>
-                  <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">300 000€</div>
-                        <div class="prices-item__type">Appartement</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">400 000€</div>
-                        <div class="prices-item__type">Maison</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">500 000€</div>
-                        <div class="prices-item__type">Locaux commerciaux et bureaux</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="prices-row">
-                  <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/1-piece.svg" alt="1 piece house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">1000€/m²</div>
-                        <div class="prices-item__type">Studio</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/2-pieces.svg" alt="2 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">2000€/m²</div>
-                        <div class="prices-item__type">2 Pieces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/3-pieces.svg" alt="3 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">3000€/m²</div>
-                        <div class="prices-item__type">3 Pieces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/4-pieces.svg" alt="4 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">4000€/m²</div>
-                        <div class="prices-item__type">4 pièces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/5-pieces.svg" alt="5 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">5000€/m²</div>
-                        <div class="prices-item__type">5 pieces et +</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-content" id="tab-1">
-                <div class="prices-row">
-                  <h2 class="prices-row-title">
-                    Prix de vente moyen par type de bien à Grenoblev
-                  </h2>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">300 000€</div>
-                        <div class="prices-item__type">Appartement</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">400 000€</div>
-                        <div class="prices-item__type">Maison</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">500 000€</div>
-                        <div class="prices-item__type">Locaux commerciaux et bureaux</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="prices-row">
-                  <h2 class="prices-row-title">Prix de vente moyen par type de bien à Grenoblev</h2>
-                  <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">300 000€</div>
-                        <div class="prices-item__type">Appartement</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">400 000€</div>
-                        <div class="prices-item__type">Maison</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">500 000€</div>
-                        <div class="prices-item__type">Locaux commerciaux et bureaux</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="prices-row">
-                  <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
-                  <div class="prices-list">
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/1-piece.svg" alt="1 piece house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">1000€/m²</div>
-                        <div class="prices-item__type">Studio</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/2-pieces.svg" alt="2 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">2000€/m²</div>
-                        <div class="prices-item__type">2 Pieces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/3-pieces.svg" alt="3 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">3000€/m²</div>
-                        <div class="prices-item__type">3 Pieces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/4-pieces.svg" alt="4 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">4000€/m²</div>
-                        <div class="prices-item__type">4 pièces</div>
-                      </div>
-                    </div>
-                    <div class="prices-list__item">
-                      <div class="prices-item__icon">
-                        <img class="icon-icon" src="./img/icons/5-pieces.svg" alt="5 pieces house">
-                      </div>
-                      <div class="prices-item__value">
-                        <div class="prices-item__amount">5000€/m²</div>
-                        <div class="prices-item__type">5 pieces et +</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <a href="#" class="header-logo">
+          <img class="white-logo" src="./img/main-logo.svg" alt="iadfrance logo">
+          <img class="blue-logo" src="./img/main-logo-blue.png" alt="iadfrance logo">
+        </a>
+        <div class="navbar">
+          <ul class="menu">
+            <li class="menu-item"><a href="#" class="menu-link">Estimer</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Acheter</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Louer</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Vendre</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Trouver un conseiller</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Nous rejoindre</a></li>
+          </ul>
         </div>
-        <div class="col-lg-5 col-xs-12">
-          <div class="map-container">
-            <div id="osm-map"></div>
-          </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
-  </section>
-  <section class="banner hidden-md">
-    <div class="container">
-      <div class="banner-inner">
-        <div class="banner-text">
-          <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
+  </header>
+  <main>
+    <section class="main-screen">
+      <div class="container">
+        <div class="main-screen__image">
+          <img class="desktop" src="./img/main-screen-bg.jpg" alt="background image (room)">
+          <img class="mobile" src="./img/main-screen-bg-mob.jpg" alt="background image (room)">
         </div>
-        <div class="banner-btn">
-          <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="graph">
-    <div class="container">
-      <div class="graph-main">
-        <h2 class="section-heading">
-          Evolution du marché et des prix de l'immobilier au m2 à Grenoble
-        </h2>
-        <div class="chart-container">
-          <div id="chart-legend"></div>
-          <canvas id="chart-graph" width="630" height="450"></canvas>
-        </div>
-      </div>
-      <div class="graph-additional">
-        <h2 class="section-heading">Evolution des prix immobiliers moyens /m² à Grenoble</h2>
-        <div class="table">
-          <div class="table-row">
-            <div class="table-cell table-heading">Les années</div>
-            <div class="table-cell table-heading">Maison</div>
-            <div class="table-cell table-heading">Appartement</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">6 mois</div>
-            <div class="table-cell red-cell">+0.5%</div>
-            <div class="table-cell green-cell">-0.5%</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">1 an</div>
-            <div class="table-cell green-cell">-0.5%</div>
-            <div class="table-cell red-cell">+0.5%</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">3 ans</div>
-            <div class="table-cell red-cell">+0.5%</div>
-            <div class="table-cell red-cell">-0.5%</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">5 ans </div>
-            <div class="table-cell red-cell">+0.5%</div>
-            <div class="table-cell green-cell">-0.5%</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">10 ans</div>
-            <div class="table-cell green-cell">-0.5%</div>
-            <div class="table-cell green-cell">-0.5%</div>
+        <div class="main-screen__content">
+          <h1>Prix de l’immobilier au m2 <span>à Grenoble 38000</span></h1>
+          <div class="main-screen__search">
+            <form action="">
+              <div class="form-group">
+                <input type="search" name="main-search" id="main-search" placeholder="Où?">
+                <div class="search-output">
+                  <ul class="search-output__list">
+                    <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE Appartement de
+                        71 m² - 2 chambres - LILLE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 118 m² - 4 chambres - MONTS</a></li>
+                    <li><a class="search-output__link" href="#">Maison/villa de 96 m² - 3 chambres -
+                        SAINT-YRIEIX-SUR-CHARENTE</a></li>
+                    <li><a class="search-output__link" href="#">Appartement de 71 m² - 2 chambres - LILLE</a></li>
+                  </ul>
+                </div>
+                <button class="btn-primary" type="submit">Recherche</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="products">
-    <div class="container">
-      <div class="products-list">
-        <div class="section-heading">
-          Comparez votre bien avec les biens actuellement en vente à Grenoble 38000
-        </div>
-
-        <!-- slider main container -->
-        <div class="swiper-container products-slider">
-          <!-- additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- slides -->
-            <div class="swiper-slide">
-              <div class="products-item">
-                <a href="#" class="products-item__image">
-                  <img src="./img/product-image.jpg" alt="product image">
-                </a>
-                <div class="products-item__content">
-                  <div class="products-item__avatar">
-                    <img src="./img/product-avatar.jpg" alt="product avatar">
-                  </div>
-                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                  <div class="products-item__subtitle">
-                    <div class="products-item__price">415 000€</div>
-                    <div class="products-item__location">
-                      <i class="icon-icon-marker"></i>Grenoble
-                    </div>
-                  </div>
-                  <div class="products-item__description">
-                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                    supérieur à la moyenne du marché
-                  </div>
-                  <div class="products-item__reference">Reference : 56232314</div>
-                  <div class="products-item__characteristics">
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+    </section>
+    <section class="prices">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-xs-12">
+            <div class="tabs">
+              <ul class="tabs-list tabs-ul">
+                <li class="tabs-list__item">
+                  <a onclick="front.openTab(this, 'tab-0','.tabs')" class="tabs-list__item_link tab-links active">Prix
+                    de vente à Grenoble</a>
+                </li>
+                <li class="tabs-list__item">
+                  <a onclick="front.openTab(this, 'tab-1','.tabs')" class="tabs-list__item_link tab-links">Prix du loyer
+                    à Grenoble</a>
+                </li>
+              </ul>
+              <div class="tabs-wrap">
+                <div class="tab-content active" id="tab-0">
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">
+                      Prix de vente moyen par type de bien à Grenoble
+                    </h2>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
                       </div>
-                      <div class="characteristic__text">
-                        133 m²
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        4
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
                       </div>
                     </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                  </div>
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">
+                      Prix de vente moyen par type de bien à Grenoble
+                    </h2>
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€/m²</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
                       </div>
-                      <div class="characteristic__text">
-                        3
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€/m²</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€/m²</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/1-piece.svg" alt="1 piece house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">1000€/m²</div>
+                          <div class="prices-item__type">Studio</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/2-pieces.svg" alt="2 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">2000€/m²</div>
+                          <div class="prices-item__type">2 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/3-pieces.svg" alt="3 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">3000€/m²</div>
+                          <div class="prices-item__type">3 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/4-pieces.svg" alt="4 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">4000€/m²</div>
+                          <div class="prices-item__type">4 pièces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/5-pieces.svg" alt="5 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">5000€/m²</div>
+                          <div class="prices-item__type">5 pieces et +</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-content" id="tab-1">
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">
+                      Prix de vente moyen par type de bien à Grenoblev
+                    </h2>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <h2 class="prices-row-title">Prix de vente moyen par type de bien à Grenoblev</h2>
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par type de bien à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/apartments.svg" alt="appartments icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">300 000€</div>
+                          <div class="prices-item__type">Appartement</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/house.svg" alt="house icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">400 000€</div>
+                          <div class="prices-item__type">Maison</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/office.svg" alt="office icon">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">500 000€</div>
+                          <div class="prices-item__type">Locaux commerciaux et bureaux</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prices-row">
+                    <p class="prices-row-subtitle">Prix de vente moyen au m² par nombre de pièce à Grenoble</p>
+                    <div class="prices-list">
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/1-piece.svg" alt="1 piece house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">1000€/m²</div>
+                          <div class="prices-item__type">Studio</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/2-pieces.svg" alt="2 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">2000€/m²</div>
+                          <div class="prices-item__type">2 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/3-pieces.svg" alt="3 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">3000€/m²</div>
+                          <div class="prices-item__type">3 Pieces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/4-pieces.svg" alt="4 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">4000€/m²</div>
+                          <div class="prices-item__type">4 pièces</div>
+                        </div>
+                      </div>
+                      <div class="prices-list__item">
+                        <div class="prices-item__icon">
+                          <img class="icon-icon" src="./img/icons/5-pieces.svg" alt="5 pieces house">
+                        </div>
+                        <div class="prices-item__value">
+                          <div class="prices-item__amount">5000€/m²</div>
+                          <div class="prices-item__type">5 pieces et +</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="products-item">
-                <a href="#" class="products-item__image">
-                  <img src="./img/product-image.jpg" alt="product image">
-                </a>
-                <div class="products-item__content">
-                  <div class="products-item__avatar">
-                    <img src="./img/product-avatar.jpg" alt="product avatar">
-                  </div>
-                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                  <div class="products-item__subtitle">
-                    <div class="products-item__price">415 000€</div>
-                    <div class="products-item__location">
-                      <i class="icon-icon-marker"></i>Grenoble
-                    </div>
-                  </div>
-                  <div class="products-item__description">
-                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                    supérieur à la moyenne du marché
-                  </div>
-                  <div class="products-item__reference">Reference : 56232314</div>
-                  <div class="products-item__characteristics">
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
-                      </div>
-                      <div class="characteristic__text">
-                        133 m²
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        4
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        3
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="products-item">
-                <a href="#" class="products-item__image">
-                  <img src="./img/product-image.jpg" alt="product image">
-                </a>
-                <div class="products-item__content">
-                  <div class="products-item__avatar">
-                    <img src="./img/product-avatar.jpg" alt="product avatar">
-                  </div>
-                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                  <div class="products-item__subtitle">
-                    <div class="products-item__price">415 000€</div>
-                    <div class="products-item__location">
-                      <i class="icon-icon-marker"></i>Grenoble
-                    </div>
-                  </div>
-                  <div class="products-item__description">
-                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                    supérieur à la moyenne du marché
-                  </div>
-                  <div class="products-item__reference">Reference : 56232314</div>
-                  <div class="products-item__characteristics">
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
-                      </div>
-                      <div class="characteristic__text">
-                        133 m²
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        4
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        3
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="products-item">
-                <a href="#" class="products-item__image">
-                  <img src="./img/product-image.jpg" alt="product image">
-                </a>
-                <div class="products-item__content">
-                  <div class="products-item__avatar">
-                    <img src="./img/product-avatar.jpg" alt="product avatar">
-                  </div>
-                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                  <div class="products-item__subtitle">
-                    <div class="products-item__price">415 000€</div>
-                    <div class="products-item__location">
-                      <i class="icon-icon-marker"></i>Grenoble
-                    </div>
-                  </div>
-                  <div class="products-item__description">
-                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                    supérieur à la moyenne du marché
-                  </div>
-                  <div class="products-item__reference">Reference : 56232314</div>
-                  <div class="products-item__characteristics">
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
-                      </div>
-                      <div class="characteristic__text">
-                        133 m²
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        4
-                      </div>
-                    </div>
-                    <div class="characteristic-item">
-                      <div class="characteristic__image">
-                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
-                      </div>
-                      <div class="characteristic__text">
-                        3
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="col-lg-5 col-xs-12">
+            <div class="map-container">
+              <div id="osm-map"></div>
             </div>
           </div>
-
-          <!-- pagination -->
-          <div class="swiper-pagination"></div>
-
         </div>
-
-        <div class="products-show-more">
-          <a href="#" class="btn-primary btn-primary-outline">Voir plus de biens</a>
-        </div>
-
       </div>
-      <div class="products-sidebar">
-        <div class="products-banner">
+    </section>
+    <section class="banner hidden-md">
+      <div class="container">
+        <div class="banner-inner">
           <div class="banner-text">
             <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
           </div>
@@ -599,573 +364,855 @@
             <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
           </div>
         </div>
-        <div class="products-prices">
-          <div class="section-heading">Prix de l'immobilier à proximité de Grenoble</div>
-          <ul class="products-prices__list">
-            <li><a href="#" class="products-prices__link">Prix immobilier Voreppe</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier La Tronche</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier Voreppe</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier La Tronche</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier Voreppe</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier La Tronche</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier Voreppe</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier La Tronche</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier Voreppe</a></li>
-            <li><a href="#" class="products-prices__link">Prix immobilier La Tronche</a></li>
-          </ul>
+      </div>
+    </section>
+    <section class="graph">
+      <div class="container">
+        <div class="graph-main">
+          <h2 class="section-heading">
+            Evolution du marché et des prix de l'immobilier au m2 à Grenoble
+          </h2>
+          <div class="chart-container">
+            <div id="chart-legend"></div>
+            <canvas id="chart-graph" width="630" height="450"></canvas>
+          </div>
+        </div>
+        <div class="graph-additional">
+          <h2 class="section-heading">Evolution des prix immobiliers moyens /m² à Grenoble</h2>
+          <div class="table">
+            <div class="table-row">
+              <div class="table-cell table-heading">Les années</div>
+              <div class="table-cell table-heading">Maison</div>
+              <div class="table-cell table-heading">Appartement</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">6 mois</div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">1 an</div>
+              <div class="table-cell green-cell">-0.5%</div>
+              <div class="table-cell red-cell">+0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">3 ans</div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell red-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">5 ans </div>
+              <div class="table-cell red-cell">+0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">10 ans</div>
+              <div class="table-cell green-cell">-0.5%</div>
+              <div class="table-cell green-cell">-0.5%</div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+    <section class="products">
+      <div class="container">
+        <div class="products-list">
+          <div class="section-heading">
+            Comparez votre bien avec les biens actuellement en vente à Grenoble 38000
+          </div>
 
-    </div>
-  </section>
-  <section class="diagrams">
-    <div class="container">
-      <div class="diagrams-prices">
-        <h3 class="section-heading">Prix de l'immobilier à Grenoble et aux villes alentours</h3>
-        <div class="canvas-wrapper">
-          <canvas id="horizontalBarChartCanvas" width="470" height="370"></canvas>
-        </div>
-      </div>
-      <div class="diagrams-details">
-        <h3 class="section-heading">
-          Détails des biens vendus à Grenoble
-        </h3>
-        <div class="canvas-wrapper">
-          <canvas id="diagramDetails" height="150" width="265"></canvas>
-          <div id="diagramDetailsLegend"></div>
-        </div>
-      </div>
-      <h3 class="diagrams-features diagrams-features-table">
-        <div class="section-heading">
-          Toutes les commodités à Grenoble
-        </div>
-        <div class="features-table">
-          <div class="table-row">
-            <div class="table-cell table-heading">Type de commodités</div>
-            <div class="table-cell table-heading">Nombre</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <i class="icon-icon-school"></i>
-              Ecole
-            </div>
-            <div class="table-cell">10</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <i class="icon-icon-hospital"></i>
-              Hopitaux
-            </div>
-            <div class="table-cell">2</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <i class="icon-icon-service"></i>
-              Restaurant
-            </div>
-            <div class="table-cell">25</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <i class="icon-icon-store"></i>
-              Supermarché 
-            </div>
-            <div class="table-cell">10</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <i class="icon-icon-station"></i>
-              Gare
-            </div>
-            <div class="table-cell">10</div>
-          </div>
-        </div>
-      </h3>
-    </div>
-  </section>
-  <section class="about">
-    <div class="container">
-      <div class="about-text">
-        <h2 class="section-heading">Tout savoir sur l'immobilier à Grenoble</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum.</p>
-      </div>
-      <div class="about-image">
-        <img src="./img/about-image.jpg" alt="picture of a bridge">
-      </div>
-    </div>
-  </section>
-  <section class="recent">
-    <div class="container">
-
-      <h2 class="section-heading">Biens récemment vendus à Grenoble 38000</h2>
-
-
-
-      <div class="swiper-container recent-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="products-item">
-              <a href="#" class="products-item__image">
-                <img src="./img/recent-products-image.jpg" alt="product image">
-              </a>
-              <div class="products-item__content">
-                <div class="products-item__avatar">
-                  <img src="./img/product-avatar.jpg" alt="product avatar">
-                </div>
-                <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                <div class="products-item__subtitle">
-                  <div class="products-item__price">415 000€</div>
-                  <div class="products-item__location">
-                    <i class="icon-icon-marker"></i>Grenoble
-                  </div>
-                </div>
-                <div class="products-item__description">
-                  Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                  chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                  supérieur à la moyenne du marché
-                </div>
-                <div class="products-item__reference">Reference : 56232314</div>
-                <div class="products-item__characteristics">
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+          <!-- slider main container -->
+          <div class="swiper-container products-slider">
+            <!-- additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- slides -->
+              <div class="swiper-slide">
+                <div class="products-item">
+                  <a href="#" class="products-item__image">
+                    <img src="./img/product-image.jpg" alt="product image">
+                  </a>
+                  <div class="products-item__content">
+                    <div class="products-item__avatar">
+                      <img src="./img/product-avatar.jpg" alt="product avatar">
                     </div>
-                    <div class="characteristic__text">
-                      133 m²
+                    <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                    <div class="products-item__subtitle">
+                      <div class="products-item__price">415 000€</div>
+                      <div class="products-item__location">
+                        <i class="icon-icon-marker"></i>Grenoble
+                      </div>
+                    </div>
+                    <div class="products-item__description">
+                      Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                      chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                      supérieur à la moyenne du marché
+                    </div>
+                    <div class="products-item__reference">Reference : 56232314</div>
+                    <div class="products-item__characteristics">
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                        </div>
+                        <div class="characteristic__text">
+                          133 m²
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          4
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          3
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="products-item">
+                  <a href="#" class="products-item__image">
+                    <img src="./img/product-image.jpg" alt="product image">
+                  </a>
+                  <div class="products-item__content">
+                    <div class="products-item__avatar">
+                      <img src="./img/product-avatar.jpg" alt="product avatar">
                     </div>
-                    <div class="characteristic__text">
-                      4
+                    <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                    <div class="products-item__subtitle">
+                      <div class="products-item__price">415 000€</div>
+                      <div class="products-item__location">
+                        <i class="icon-icon-marker"></i>Grenoble
+                      </div>
+                    </div>
+                    <div class="products-item__description">
+                      Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                      chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                      supérieur à la moyenne du marché
+                    </div>
+                    <div class="products-item__reference">Reference : 56232314</div>
+                    <div class="products-item__characteristics">
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                        </div>
+                        <div class="characteristic__text">
+                          133 m²
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          4
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          3
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="products-item">
+                  <a href="#" class="products-item__image">
+                    <img src="./img/product-image.jpg" alt="product image">
+                  </a>
+                  <div class="products-item__content">
+                    <div class="products-item__avatar">
+                      <img src="./img/product-avatar.jpg" alt="product avatar">
                     </div>
-                    <div class="characteristic__text">
-                      3
+                    <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                    <div class="products-item__subtitle">
+                      <div class="products-item__price">415 000€</div>
+                      <div class="products-item__location">
+                        <i class="icon-icon-marker"></i>Grenoble
+                      </div>
+                    </div>
+                    <div class="products-item__description">
+                      Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                      chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                      supérieur à la moyenne du marché
+                    </div>
+                    <div class="products-item__reference">Reference : 56232314</div>
+                    <div class="products-item__characteristics">
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                        </div>
+                        <div class="characteristic__text">
+                          133 m²
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          4
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          3
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="products-item">
+                  <a href="#" class="products-item__image">
+                    <img src="./img/product-image.jpg" alt="product image">
+                  </a>
+                  <div class="products-item__content">
+                    <div class="products-item__avatar">
+                      <img src="./img/product-avatar.jpg" alt="product avatar">
+                    </div>
+                    <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                    <div class="products-item__subtitle">
+                      <div class="products-item__price">415 000€</div>
+                      <div class="products-item__location">
+                        <i class="icon-icon-marker"></i>Grenoble
+                      </div>
+                    </div>
+                    <div class="products-item__description">
+                      Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                      chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                      supérieur à la moyenne du marché
+                    </div>
+                    <div class="products-item__reference">Reference : 56232314</div>
+                    <div class="products-item__characteristics">
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                        </div>
+                        <div class="characteristic__text">
+                          133 m²
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          4
+                        </div>
+                      </div>
+                      <div class="characteristic-item">
+                        <div class="characteristic__image">
+                          <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                        </div>
+                        <div class="characteristic__text">
+                          3
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="products-item">
-              <a href="#" class="products-item__image">
-                <img src="./img/recent-products-image.jpg" alt="product image">
-              </a>
-              <div class="products-item__content">
-                <div class="products-item__avatar">
-                  <img src="./img/product-avatar.jpg" alt="product avatar">
-                </div>
-                <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                <div class="products-item__subtitle">
-                  <div class="products-item__price">415 000€</div>
-                  <div class="products-item__location">
-                    <i class="icon-icon-marker"></i>Grenoble
-                  </div>
-                </div>
-                <div class="products-item__description">
-                  Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                  chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                  supérieur à la moyenne du marché
-                </div>
-                <div class="products-item__reference">Reference : 56232314</div>
-                <div class="products-item__characteristics">
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
-                    </div>
-                    <div class="characteristic__text">
-                      133 m²
-                    </div>
-                  </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                    </div>
-                    <div class="characteristic__text">
-                      4
-                    </div>
-                  </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
-                    </div>
-                    <div class="characteristic__text">
-                      3
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="products-item">
-              <a href="#" class="products-item__image">
-                <img src="./img/recent-products-image.jpg" alt="product image">
-              </a>
-              <div class="products-item__content">
-                <div class="products-item__avatar">
-                  <img src="./img/product-avatar.jpg" alt="product avatar">
-                </div>
-                <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
-                <div class="products-item__subtitle">
-                  <div class="products-item__price">415 000€</div>
-                  <div class="products-item__location">
-                    <i class="icon-icon-marker"></i>Grenoble
-                  </div>
-                </div>
-                <div class="products-item__description">
-                  Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
-                  chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
-                  supérieur à la moyenne du marché
-                </div>
-                <div class="products-item__reference">Reference : 56232314</div>
-                <div class="products-item__characteristics">
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
-                    </div>
-                    <div class="characteristic__text">
-                      133 m²
-                    </div>
-                  </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
-                    </div>
-                    <div class="characteristic__text">
-                      4
-                    </div>
-                  </div>
-                  <div class="characteristic-item">
-                    <div class="characteristic__image">
-                      <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
-                    </div>
-                    <div class="characteristic__text">
-                      3
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination recent-pagination"></div>
-      </div>
 
-    </div>
-  </section>
-  <section class="banner">
-    <div class="container">
-      <div class="banner-inner">
-        <div class="banner-text">
-          <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
-          <p>Simulez la valeur de votre bien en ligne et bénéficiez de conseils d’un mandataire immobilier IAD </p>
+            <!-- pagination -->
+            <div class="swiper-pagination"></div>
+
+          </div>
+
+          <div class="products-show-more">
+            <a href="#" class="btn-primary btn-primary-outline">Voir plus de biens</a>
+          </div>
+
+        </div>
+        <div class="products-sidebar">
+          <div class="products-banner">
+            <div class="banner-text">
+              <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
+            </div>
+            <div class="banner-btn">
+              <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
+            </div>
+          </div>
+          <div class="products-prices">
+            <div class="section-heading">Prix de l'immobilier à proximité de Grenoble</div>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+            <a href="#" class="products-prices__link">Prix immobilier Voreppe</a>
+            <a href="#" class="products-prices__link">Prix immobilier La Tronche</a>
+          </div>
         </div>
 
-        <div class="banner-btn">
-          <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
+      </div>
+    </section>
+    <section class="diagrams">
+      <div class="container">
+        <div class="diagrams-prices">
+          <h3 class="section-heading">Prix de l'immobilier à Grenoble et aux villes alentours</h3>
+          <div class="canvas-wrapper">
+            <canvas id="horizontalBarChartCanvas" width="470" height="370"></canvas>
+          </div>
+        </div>
+        <div class="diagrams-details">
+          <h3 class="section-heading">
+            Détails des biens vendus à Grenoble
+          </h3>
+          <div class="canvas-wrapper">
+            <canvas id="diagramDetails" height="150" width="265"></canvas>
+            <div id="diagramDetailsLegend"></div>
+          </div>
+        </div>
+        <div class="diagrams-features diagrams-features-table">
+          <h3 class="section-heading">
+            Toutes les commodités à Grenoble
+          </h3>
+          <div class="features-table">
+            <div class="table-row">
+              <div class="table-cell table-heading">Type de commodités</div>
+              <div class="table-cell table-heading">Nombre</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <i class="icon-icon-school"></i>
+                Ecole
+              </div>
+              <div class="table-cell">10</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <i class="icon-icon-hospital"></i>
+                Hopitaux
+              </div>
+              <div class="table-cell">2</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <i class="icon-icon-service"></i>
+                Restaurant
+              </div>
+              <div class="table-cell">25</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <i class="icon-icon-store"></i>
+                Supermarché 
+              </div>
+              <div class="table-cell">10</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <i class="icon-icon-station"></i>
+                Gare
+              </div>
+              <div class="table-cell">10</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="faq faq-tabs">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xs-12">
-          <div class="accordion-container">
-            <div class="accordion__item active">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier en Auvergne-Rhône-Alpes
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                <div class="table">
-                  <div class="table-row">
-                    <div class="table-cell table-heading">Ville</div>
-                    <div class="table-cell table-heading">Prix des maisons au m²</div>
-                    <div class="table-cell table-heading">Prix des appartement au m²</div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <div class="about-text">
+          <h2 class="section-heading">Tout savoir sur l'immobilier à Grenoble</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        </div>
+        <div class="about-image">
+          <img src="./img/about-image.jpg" alt="picture of a bridge">
+        </div>
+      </div>
+    </section>
+    <section class="recent">
+      <div class="container">
+        <h2 class="section-heading">Biens récemment vendus à Grenoble 38000</h2>
+        <div class="swiper-container recent-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="products-item">
+                <a href="#" class="products-item__image">
+                  <img src="./img/recent-products-image.jpg" alt="product image">
+                </a>
+                <div class="products-item__content">
+                  <div class="products-item__avatar">
+                    <img src="./img/product-avatar.jpg" alt="product avatar">
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                  <div class="products-item__subtitle">
+                    <div class="products-item__price">415 000€</div>
+                    <div class="products-item__location">
+                      <i class="icon-icon-marker"></i>Grenoble
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__description">
+                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                    supérieur à la moyenne du marché
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__reference">Reference : 56232314</div>
+                  <div class="products-item__characteristics">
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                      </div>
+                      <div class="characteristic__text">
+                        133 m²
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        4
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        3
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier en Isère
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                <div class="table">
-                  <div class="table-row">
-                    <div class="table-cell table-heading">Ville</div>
-                    <div class="table-cell table-heading">Prix des maisons au m²</div>
-                    <div class="table-cell table-heading">Prix des appartement au m²</div>
+            <div class="swiper-slide">
+              <div class="products-item">
+                <a href="#" class="products-item__image">
+                  <img src="./img/recent-products-image.jpg" alt="product image">
+                </a>
+                <div class="products-item__content">
+                  <div class="products-item__avatar">
+                    <img src="./img/product-avatar.jpg" alt="product avatar">
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                  <div class="products-item__subtitle">
+                    <div class="products-item__price">415 000€</div>
+                    <div class="products-item__location">
+                      <i class="icon-icon-marker"></i>Grenoble
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__description">
+                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                    supérieur à la moyenne du marché
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__reference">Reference : 56232314</div>
+                  <div class="products-item__characteristics">
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                      </div>
+                      <div class="characteristic__text">
+                        133 m²
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        4
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        3
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier par quartier de Grenoble
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                <div class="table">
-                  <div class="table-row">
-                    <div class="table-cell table-heading">Ville</div>
-                    <div class="table-cell table-heading">Prix des maisons au m²</div>
-                    <div class="table-cell table-heading">Prix des appartement au m²</div>
+            <div class="swiper-slide">
+              <div class="products-item">
+                <a href="#" class="products-item__image">
+                  <img src="./img/recent-products-image.jpg" alt="product image">
+                </a>
+                <div class="products-item__content">
+                  <div class="products-item__avatar">
+                    <img src="./img/product-avatar.jpg" alt="product avatar">
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <a href="#" class="products-item__title">Appartement lumineux à l'île verte</a>
+                  <div class="products-item__subtitle">
+                    <div class="products-item__price">415 000€</div>
+                    <div class="products-item__location">
+                      <i class="icon-icon-marker"></i>Grenoble
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__description">
+                    Cet appartement est en vente depuis le 5 octobre 2019. D'une superficie de 133m², il comporte 3
+                    chambres et 2 salles de bain. Il est vendu 500,000€ soit, soit 5000€/m², ce qui est légèrement
+                    supérieur à la moyenne du marché
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                  <div class="products-item__reference">Reference : 56232314</div>
+                  <div class="products-item__characteristics">
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/square-meters.svg" alt="square meters icon">
+                      </div>
+                      <div class="characteristic__text">
+                        133 m²
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/rooms.svg" alt="rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        4
+                      </div>
+                    </div>
+                    <div class="characteristic-item">
+                      <div class="characteristic__image">
+                        <img class="icon-icon" src="./img/icons/bed-rooms.svg" alt="bed rooms icon">
+                      </div>
+                      <div class="characteristic__text">
+                        3
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier dans les plus grandes villes de France
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                <div class="table">
-                  <div class="table-row">
-                    <div class="table-cell table-heading">Ville</div>
-                    <div class="table-cell table-heading">Prix des maisons au m²</div>
-                    <div class="table-cell table-heading">Prix des appartement au m²</div>
+          </div>
+          <div class="swiper-pagination recent-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="banner">
+      <div class="container">
+        <div class="banner-inner">
+          <div class="banner-text">
+            <h3>Estimez votre bien situé à Grenoble gratuitement en deux minutes seulement</h3>
+            <p>Simulez la valeur de votre bien en ligne et bénéficiez de conseils d’un mandataire immobilier iad </p>
+          </div>
+          <div class="banner-btn">
+            <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faq faq-tabs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-xs-12">
+            <div class="accordion-container">
+              <div class="accordion__item active">
+                <a class="accordion__button" href="#">
+                  Prix de l'immobilier en Auvergne-Rhône-Alpes
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  <div class="table">
+                    <div class="table-row">
+                      <div class="table-cell table-heading">Ville</div>
+                      <div class="table-cell table-heading">Prix des maisons au m²</div>
+                      <div class="table-cell table-heading">Prix des appartement au m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Prix de l'immobilier en Isère
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  <div class="table">
+                    <div class="table-row">
+                      <div class="table-cell table-heading">Ville</div>
+                      <div class="table-cell table-heading">Prix des maisons au m²</div>
+                      <div class="table-cell table-heading">Prix des appartement au m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>  
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Prix de l'immobilier par quartier de Grenoble
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  <div class="table">
+                    <div class="table-row">
+                      <div class="table-cell table-heading">Ville</div>
+                      <div class="table-cell table-heading">Prix des maisons au m²</div>
+                      <div class="table-cell table-heading">Prix des appartement au m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
                   </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
-                    <div class="table-cell">5000€/m²</div>
-                    <div class="table-cell">5000€/m²</div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Prix de l'immobilier dans les plus grandes villes de France
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  <div class="table">
+                    <div class="table-row">
+                      <div class="table-cell table-heading">Ville</div>
+                      <div class="table-cell table-heading">Prix des maisons au m²</div>
+                      <div class="table-cell table-heading">Prix des appartement au m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-cell"><a href="#">Prix immobilier Lyon</a></div>
+                      <div class="table-cell">5000€/m²</div>
+                      <div class="table-cell">5000€/m²</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1173,76 +1220,216 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="faq faq-questions">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="section-heading">Questions fréquemment posées</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <div class="faq-image">
-            <img src="./img/faq-image.jpg" alt="landscape picture">
+    </section>
+    <section class="faq faq-questions">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="section-heading">Questions fréquemment posées</div>
           </div>
         </div>
-        <div class="col-md-6 col-xs-12">
-          <div class="accordion-container faq-accordion">
-            <div class="accordion__item active">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier en Auvergne-Rhône-Alpes
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="faq-image">
+              <img src="./img/faq-image.jpg" alt="landscape picture">
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="accordion-container faq-accordion">
+              <div class="accordion__item active">
+                <a class="accordion__button" href="#">
+                  Prix de l'immobilier par quartier de Grenoble
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Quelle est la meilleure période pour acheter à Grenoble?
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  2222 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Comment trouver une maison à vendre à Grenoble?
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  333 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </div>
+              </div>
+              <div class="accordion__item">
+                <a class="accordion__button" href="#">
+                  Comment trouver un appartement à vendre à Grenoble?
+                  <i class="accordion__arrow icon-icon-arrow"></i>
+                </a>
+                <div class="accordion__content">
+                  4444 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </div>
               </div>
             </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier en Isère
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                2222 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier par quartier de Grenoble
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                333 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <a class="accordion__button" href="#">
-                Prix de l'immobilier dans les plus grandes villes de France
-                <i class="accordion__arrow icon-icon-arrow"></i>
-              </a>
-              <div class="accordion__content">
-                4444 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="scroll-to-top">
+          <img src="./img/icons/scroll-to-top.svg" alt="scroll to top">
+        </div>
+
+        <div class="footer-column column-logo">
+          <a class="footer-logo" href="#">
+            <img src="./img/main-logo-blue.png" alt="iadfrance logo">
+          </a>
+        </div>
+        <div class="footer-column column-list">
+          <h3 class="footer-title">Le site</h3>
+
+          <a class="footer-link" href="#">Estimez votre bien</a>
+          <a class="footer-link" href="#">Trouver un conseiller</a>
+          <a class="footer-link" href="#">Conciergerie iad</a>
+
+        </div>
+        <div class="footer-column column-list-wider">
+          <h3 class="footer-title">Nous rejoindre</h3>
+
+          <a class="footer-link" href="#">Le groupe iad</a>
+          <a class="footer-link" href="#">Espace Presse</a>
+          <a class="footer-link" href="#">Médiation</a>
+          <a class="footer-link" href="#">Nous contacter</a>
+          <a class="footer-link" href="#">Bareme d'honoraires</a>
+          <a class="footer-link" href="#">Berame E&C</a>
+
+        </div>
+        <div class="footer-column column-socials">
+          <h3 class="footer-title">
+            Suivre iad
+          </h3>
+          <div class="footer-socials">
+            <a class="socials-link" href="#"><i class="icon-linkedin"></i></a>
+            <a class="socials-link" href="#"><i class="icon-instagram"></i></a>
+            <a class="socials-link" href="#"><i class="icon-facebook"></i></a>
+          </div>
+          <div class="footer-unis">
+            <img src="./img/unis-logo.png" alt="unis loco">
+            <span>iad est membre UNIS!</span>
+          </div>
+        </div>
+        <div class="footer-column column-lang">
+          <div class="lang">
+            <div class="lang-select-wrapper">
+              <div class="lang-select">
+                <div class="lang-select__trigger">
+                  <img src="./img/icons/france.svg" alt="flag, france language">
+                  <i class="icon-triangle"></i>
+                </div>
+                <div class="lang-options">
+                  <a class="lang-option selected" href="#">
+                    <img src="./img/icons/spain.svg" alt="flag, spain language">
+                  </a>
+                  <a class="lang-option" href="#">
+                    <img src="./img/icons/italy.svg" alt="flag, italy language">
+                  </a>
+                  <a class="lang-option" href="#">
+                    <img src="./img/icons/portugal.svg" alt="flag, portugal language">
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</main>
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <a class="footer-link" href="#">Politique de confidentialité</a>
+          <a class="footer-link" href="#">Mentions legales</a>
+          <a class="footer-link" href="#">Cookies</a>
+          <div class="footer-cta">
+            <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/chart.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/leaflet-map.min.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script>
+    var map = L.map('osm-map').setView([45.189167, 5.725182], 14.5);
+    mapLink =
+      '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer(
+      'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; ' + mapLink + ' Contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    var customIcon = new L.icon({
+      iconUrl: 'img/icons/map-marker.svg',
+      iconSize: [18, 24],
+      popupAnchor: [0, -10]
+    });
+    var customPopup = `<a class="map-image" href="#">
+          <img src='img/recent-products-image.jpg' alt='apartments 1'/>
+        </a>
+        <a class="map-link" href="#">Appartement lumineux à l'île verte</a>
+        <div class="products-item__subtitle">
+          <div class="products-item__price">415 000€</div>
+              <div class="products-item__location">
+                <i class="icon-icon-marker"></i>Grenoble
+            </div>
+          </div>
+      `;
+    var locations = [
+      [45.18915, 5.72517],
+      [45.18844, 5.72419],
+      [45.18594, 5.72469],
+      [45.18584, 5.72799],
+      [45.19454, 5.72299],
+      [45.18554, 5.71599],
+      [45.18854, 5.72999],
+      [45.18954, 5.72020],
+      [45.19254, 5.72920],
+      [45.19154, 5.73120],
+      [45.18854, 5.73450],
+      [45.19254, 5.71750]
+    ];
+    for (var i = 0; i < locations.length; i++) {
+      marker = new L.marker([locations[i][0], locations[i][1]], { icon: customIcon })
+        .bindPopup(customPopup)
+        .addTo(map);
+    }
+  </script>
+</body>
+
+</html>

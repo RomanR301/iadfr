@@ -12,32 +12,32 @@
       </div>
       <div class="footer-column column-list">
         <h3 class="footer-title">Le site</h3>
-        <ul class="footer-list">
-          <li><a class="footer-link" href="#">Estimez votre bien</a></li>
-          <li><a class="footer-link" href="#">Trouver un conseiller</a></li>
-          <li><a class="footer-link" href="#">Conciergerie iad</a></li>
-        </ul>
+
+        <a class="footer-link" href="#">Estimez votre bien</a>
+        <a class="footer-link" href="#">Trouver un conseiller</a>
+        <a class="footer-link" href="#">Conciergerie iad</a>
+
       </div>
       <div class="footer-column column-list-wider">
         <h3 class="footer-title">Nous rejoindre</h3>
-        <ul class="footer-list">
-          <li><a class="footer-link" href="#">Le groupe iad</a></li>
-          <li><a class="footer-link" href="#">Espace Presse</a></li>
-          <li><a class="footer-link" href="#">Médiation</a></li>
-          <li><a class="footer-link" href="#">Nous contacter</a></li>
-          <li><a class="footer-link" href="#">Bareme d'honoraires</a></li>
-          <li><a class="footer-link" href="#">Berame E&C</a></li>
-        </ul>
+
+        <a class="footer-link" href="#">Le groupe iad</a>
+        <a class="footer-link" href="#">Espace Presse</a>
+        <a class="footer-link" href="#">Médiation</a>
+        <a class="footer-link" href="#">Nous contacter</a>
+        <a class="footer-link" href="#">Bareme d'honoraires</a>
+        <a class="footer-link" href="#">Berame E&C</a>
+
       </div>
       <div class="footer-column column-socials">
         <h3 class="footer-title">
           Suivre iad
         </h3>
-        <ul class="footer-socials">
-          <li><a class="socials-link" href="#"><i class="icon-linkedin"></i></a></li>
-          <li><a class="socials-link" href="#"><i class="icon-instagram"></i></a></li>
-          <li><a class="socials-link" href="#"><i class="icon-facebook"></i></a></li>
-        </ul>
+        <div class="footer-socials">
+          <a class="socials-link" href="#"><i class="icon-linkedin"></i></a>
+          <a class="socials-link" href="#"><i class="icon-instagram"></i></a>
+          <a class="socials-link" href="#"><i class="icon-facebook"></i></a>
+        </div>
         <div class="footer-unis">
           <img src="./img/unis-logo.png" alt="unis loco">
           <span>iad est membre UNIS!</span>
@@ -71,11 +71,9 @@
   <div class="footer-copyright">
     <div class="container">
       <div class="row">
-        <ul>
-          <li><a class="footer-link" href="#">Politique de confidentialité</a></li>
-          <li><a class="footer-link" href="#">Mentions legales</a></li>
-          <li><a class="footer-link" href="#">Cookies</a></li>
-        </ul>
+        <a class="footer-link" href="#">Politique de confidentialité</a>
+        <a class="footer-link" href="#">Mentions legales</a>
+        <a class="footer-link" href="#">Cookies</a>
         <div class="footer-cta">
           <a href="#" class="btn-primary btn-primary-outline">Estimer mon bien</a>
         </div>
@@ -102,13 +100,14 @@
   }).addTo(map);
 
   var customIcon = new L.icon({
-      iconUrl: 'img/icons/map-marker.svg',
-      iconSize: [18, 24],
-      popupAnchor: [0,-10]
-    });
-    var customPopup = `
-    <img src='img/recent-products-image.jpg' alt='apartments 1'/>
-      <h3>Appartement lumineux à l'île verte</h3>
+    iconUrl: 'img/icons/map-marker.svg',
+    iconSize: [18, 24],
+    popupAnchor: [0, -10]
+  });
+  var customPopup = `<a class="map-image" href="#">
+        <img src='img/recent-products-image.jpg' alt='apartments 1'/>
+      </a>
+      <a class="map-link" href="#">Appartement lumineux à l'île verte</a>
       <div class="products-item__subtitle">
         <div class="products-item__price">415 000€</div>
             <div class="products-item__location">
@@ -130,8 +129,8 @@
     [45.18854, 5.73450],
     [45.19254, 5.71750]
   ];
-    for (var i = 0; i < locations.length; i++) {
-    marker = new L.marker([locations[i][0], locations[i][1]], {icon: customIcon})
+  for (var i = 0; i < locations.length; i++) {
+    marker = new L.marker([locations[i][0], locations[i][1]], { icon: customIcon })
       .bindPopup(customPopup)
       .addTo(map);
   }
