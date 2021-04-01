@@ -256,7 +256,6 @@ $whiteColor: #ffffff;
   }
 }
 .main-screen {
-  position: relative;
   width: 100%;
   height: 350px;
   @media (min-width: 1920px) {
@@ -268,7 +267,7 @@ $whiteColor: #ffffff;
   &__image {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 350px;
     left: 0;
     top: 0;
     z-index: -1;
@@ -278,9 +277,6 @@ $whiteColor: #ffffff;
     & .mobile {
       display: none;
     }
-  }
-  & .container {
-    height: 100%;
   }
   &__content {
     height: 100%;
@@ -341,13 +337,11 @@ $whiteColor: #ffffff;
   align-items: flex-end;
   max-width: 1170px;
   margin: auto;
-  & .row {
-    justify-content: space-between;
-    align-items: flex-end;
-  }
   & .map-container {
+    margin-right: 15px;
+    margin-left: 15px;
     height: 400px;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     & #osm-map {
       height: 100%;
@@ -425,6 +419,7 @@ $whiteColor: #ffffff;
 }
 .banner {
   margin-bottom: 120px;
+  max-width: 1140px;
   &-inner {
     padding: 35px 70px;
     width: 100%;
@@ -442,9 +437,7 @@ $whiteColor: #ffffff;
 }
 .products {
   margin-bottom: 130px;
-  & .container {
-    display: flex;
-  }
+  display: flex;
   &-list {
     width: calc(64% - 15px);
     margin-right: 15px;
@@ -575,9 +568,7 @@ $whiteColor: #ffffff;
 
 .about {
   margin-bottom: 120px;
-  & .container {
-    display: flex;
-  }
+  display: flex;
   &-text {
     width: calc(60% - 15px);
     margin-right: 15px;
@@ -648,19 +639,22 @@ $whiteColor: #ffffff;
     }
   }
   &-image {
-    margin-top: -55px;
+    // margin-top: -55px;
     & img {
       @include defaultIcon(contain);
     }
   }
 }
 .faq-questions {
-  margin-bottom: 120px;
+  margin: 0 auto 120px auto;
+  & .col-md-6:first-child {
+    padding-left: 0;
+  }
+  & .col-md-6:last-child {
+    padding-right: 0;
+  }
   & .section-heading {
     margin-bottom: 30px;
-  }
-  & .row:first-of-type {
-    justify-content: flex-end;
   }
 }
 .accordion {
@@ -707,6 +701,11 @@ $whiteColor: #ffffff;
 }
 
 .faq-tabs {
+  position: relative;
+  margin: 0 auto 100px auto;
+  & .accordion-container {
+    padding-left: 0;
+  }
   .table {
     &-row {
       display: flex;
@@ -808,11 +807,10 @@ $whiteColor: #ffffff;
     }
   }
   &-copyright {
-    & .row {
-      width: 100%;
-      padding: 15px 0;
-      justify-content: center;
-    }
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
     & .footer-link {
       display: block;
       margin: 0 10px;
@@ -897,9 +895,7 @@ $whiteColor: #ffffff;
   }
 }
 .graph {
-  & .container {
-    display: flex;
-  }
+  display: flex;
   & .section-heading {
     margin-bottom: 30px;
   }
@@ -1138,6 +1134,10 @@ $whiteColor: #ffffff;
 }
 // XL
 @media (max-width: 1200px) {
+  .banner {
+    width: 97%;
+    margin: 0 auto 120px auto;
+  }
   .header {
     & .row {
       margin: 0;
@@ -1179,6 +1179,18 @@ $whiteColor: #ffffff;
 
 // Large screens
 @media (max-width: 992px) {
+  .main-screen__image {
+    height: 400px;
+  }
+  .prices {
+    margin: 0 15px;
+  }
+  .prices .col-xs-12 {
+    padding: 0;
+  }
+  .prices .map-container {
+    margin: 30px 0 0 0;
+  }
   .main-screen {
     height: 400px;
   }
@@ -1199,19 +1211,18 @@ $whiteColor: #ffffff;
     }
   }
   .banner {
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto;
     &-inner {
       padding: 25px 30px;
     }
   }
   .products {
     margin-bottom: 60px;
-    & .container {
-      flex-direction: column;
-    }
+    flex-direction: column;
+
     &-list {
       width: 100%;
-      margin: auto;
+      margin: auto auto 30px auto;
     }
     &-sidebar {
       width: 100%;
@@ -1236,6 +1247,9 @@ $whiteColor: #ffffff;
     height: fit-content;
   }
   & .faq-tabs {
+    & .accordion-container {
+      padding: 0;
+    }
     & .accordion__content {
       display: none;
       position: static;
@@ -1259,6 +1273,9 @@ $whiteColor: #ffffff;
 }
 // Medium screens
 @media (max-width: 767px) {
+  .main-screen__image {
+    height: 450px;
+  }
   .hidden-md {
     display: none;
   }
@@ -1332,11 +1349,6 @@ $whiteColor: #ffffff;
       top: 140px;
     }
   }
-  .prices {
-    .col-xs-12 {
-      padding: 0;
-    }
-  }
   .tabs-list {
     padding: 5px;
     &__item {
@@ -1356,9 +1368,7 @@ $whiteColor: #ffffff;
     margin: 20px 0 0 0;
   }
   .graph {
-    & .container {
-      flex-direction: column;
-    }
+    flex-direction: column;
     &-main {
       width: 100%;
       margin: 0 0 60px 0;
@@ -1429,9 +1439,7 @@ $whiteColor: #ffffff;
   }
   .about {
     margin-bottom: 50px;
-    & .container {
-      flex-direction: column;
-    }
+    flex-direction: column;
     &-text {
       width: 100%;
       margin: 0 0 20px 0;
@@ -1463,6 +1471,12 @@ $whiteColor: #ffffff;
   }
   .faq {
     margin-bottom: 60px;
+    &-questions {
+      & .col-md-6:first-child,
+      & .col-md-6:last-child {
+        padding: 0;
+      }
+    }
   }
   .footer .container {
     flex-wrap: wrap;
@@ -1500,11 +1514,7 @@ $whiteColor: #ffffff;
   .lang-option {
     margin: 0 10px;
   }
-  .footer-copyright .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-copyright .row {
+  .footer-copyright {
     width: 100%;
     text-align: center;
     flex-direction: column;

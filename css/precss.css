@@ -250,7 +250,6 @@
 }
 
 .main-screen {
-  position: relative;
   width: 100%;
   height: 350px;
 }
@@ -270,7 +269,7 @@
 .main-screen__image {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 350px;
   left: 0;
   top: 0;
   z-index: -1;
@@ -286,10 +285,6 @@
 
 .main-screen__image .mobile {
   display: none;
-}
-
-.main-screen .container {
-  height: 100%;
 }
 
 .main-screen__content {
@@ -358,14 +353,11 @@
   margin: auto;
 }
 
-.prices .row {
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
 .prices .map-container {
+  margin-right: 15px;
+  margin-left: 15px;
   height: 400px;
-  width: 100%;
+  width: 90%;
   overflow: hidden;
 }
 
@@ -456,6 +448,7 @@
 
 .banner {
   margin-bottom: 120px;
+  max-width: 1140px;
 }
 
 .banner-inner {
@@ -479,9 +472,6 @@
 
 .products {
   margin-bottom: 130px;
-}
-
-.products .container {
   display: flex;
 }
 
@@ -641,9 +631,6 @@
 
 .about {
   margin-bottom: 120px;
-}
-
-.about .container {
   display: flex;
 }
 
@@ -722,10 +709,6 @@
           transform: rotate(90deg);
 }
 
-.faq-image {
-  margin-top: -55px;
-}
-
 .faq-image img {
   display: block;
   width: 100%;
@@ -735,15 +718,19 @@
 }
 
 .faq-questions {
-  margin-bottom: 120px;
+  margin: 0 auto 120px auto;
+}
+
+.faq-questions .col-md-6:first-child {
+  padding-left: 0;
+}
+
+.faq-questions .col-md-6:last-child {
+  padding-right: 0;
 }
 
 .faq-questions .section-heading {
   margin-bottom: 30px;
-}
-
-.faq-questions .row:first-of-type {
-  justify-content: flex-end;
 }
 
 .accordion__item {
@@ -790,6 +777,15 @@
 
 .accordion__button i:before {
   display: block;
+}
+
+.faq-tabs {
+  position: relative;
+  margin: 0 auto 100px auto;
+}
+
+.faq-tabs .accordion-container {
+  padding-left: 0;
 }
 
 .faq-tabs .table-row {
@@ -918,9 +914,10 @@
   margin-right: 10px;
 }
 
-.footer-copyright .row {
+.footer-copyright {
   width: 100%;
   padding: 15px 0;
+  display: flex;
   justify-content: center;
 }
 
@@ -1018,7 +1015,7 @@
           transform: rotate(-90deg);
 }
 
-.graph .container {
+.graph {
   display: flex;
 }
 
@@ -1297,6 +1294,10 @@
 }
 
 @media (max-width: 1200px) {
+  .banner {
+    width: 97%;
+    margin: 0 auto 120px auto;
+  }
   .header .row {
     margin: 0;
   }
@@ -1333,6 +1334,18 @@
 }
 
 @media (max-width: 992px) {
+  .main-screen__image {
+    height: 400px;
+  }
+  .prices {
+    margin: 0 15px;
+  }
+  .prices .col-xs-12 {
+    padding: 0;
+  }
+  .prices .map-container {
+    margin: 30px 0 0 0;
+  }
   .main-screen {
     height: 400px;
   }
@@ -1353,20 +1366,18 @@
     height: 100%;
   }
   .banner {
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto;
   }
   .banner-inner {
     padding: 25px 30px;
   }
   .products {
     margin-bottom: 60px;
-  }
-  .products .container {
     flex-direction: column;
   }
   .products-list {
     width: 100%;
-    margin: auto;
+    margin: auto auto 30px auto;
   }
   .products-sidebar {
     width: 100%;
@@ -1391,6 +1402,9 @@
     height: -moz-fit-content;
     height: fit-content;
   }
+  .faq-tabs .accordion-container {
+    padding: 0;
+  }
   .faq-tabs .accordion__content {
     display: none;
     position: static;
@@ -1409,6 +1423,9 @@
 }
 
 @media (max-width: 767px) {
+  .main-screen__image {
+    height: 450px;
+  }
   .hidden-md {
     display: none;
   }
@@ -1478,9 +1495,6 @@
     width: 100%;
     top: 140px;
   }
-  .prices .col-xs-12 {
-    padding: 0;
-  }
   .tabs-list {
     padding: 5px;
   }
@@ -1499,7 +1513,7 @@
     width: 100%;
     margin: 20px 0 0 0;
   }
-  .graph .container {
+  .graph {
     flex-direction: column;
   }
   .graph-main {
@@ -1571,8 +1585,6 @@
   }
   .about {
     margin-bottom: 50px;
-  }
-  .about .container {
     flex-direction: column;
   }
   .about-text {
@@ -1601,6 +1613,10 @@
   }
   .faq {
     margin-bottom: 60px;
+  }
+  .faq-questions .col-md-6:first-child,
+  .faq-questions .col-md-6:last-child {
+    padding: 0;
   }
   .footer .container {
     flex-wrap: wrap;
@@ -1638,11 +1654,7 @@
   .lang-option {
     margin: 0 10px;
   }
-  .footer-copyright .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-copyright .row {
+  .footer-copyright {
     width: 100%;
     text-align: center;
     flex-direction: column;
